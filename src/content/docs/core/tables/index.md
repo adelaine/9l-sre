@@ -1,6 +1,8 @@
 ---
 title: Tables overview
 description: The eleven entities in the issue-tracking schema.
+sidebar:
+    order: 10
 ---
 
 The [ERD](/core/datadiagram/) defines the agreed relationships. **★ Minimum** marks the tables needed for external sign-in, issue creation, and display. Field definitions cover this first milestone; physical database types remain to be defined.

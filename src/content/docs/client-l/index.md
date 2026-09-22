@@ -1,6 +1,8 @@
 ---
 title: ClientL overview
 description: The Linear-inspired React Router and Redux client for the 9L-SRE demo.
+sidebar:
+    order: 10
 ---
 
 ClientL is the planned React frontend in `9l-sre-clientl`. It uses React Router for routing and Redux for application state. Tailwind CSS is part of the original React demo direction.

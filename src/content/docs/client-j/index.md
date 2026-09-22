@@ -1,6 +1,8 @@
 ---
 title: ClientJ overview
 description: The Jira-inspired Angular client for the 9L-SRE demo.
+sidebar:
+    order: 10
 ---
 
 ClientJ is the planned Angular frontend in `9l-sre-clientj`. It uses Jira as interface inspiration for structured incident tracking.

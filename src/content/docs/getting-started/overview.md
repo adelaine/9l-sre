@@ -1,6 +1,8 @@
 ---
 title: Project overview
 description: The purpose, scope, and shared domain of the 9L-SRE demo.
+sidebar:
+    order: 10
 ---
 
 9L-SRE is a portfolio demo and tutorial built around incident reporting and response. Its fictional setting gives the demo recognizable characters and incidents, while its technical structure supports a Spring Boot backend and two alternative frontend applications.

@@ -11,11 +11,7 @@ export default defineConfig({
                 { label: "Home", slug: "" },
                 {
                     label: "Getting started",
-                    items: [
-                        "getting-started/overview",
-                        "getting-started/architecture",
-                        "getting-started/local-development",
-                    ],
+                    items: [{ autogenerate: { directory: "getting-started" } }],
                 },
                 {
                     label: "Core",
@@ -26,68 +22,42 @@ export default defineConfig({
                         {
                             label: "API",
                             items: [
-                                "core/api/auth",
-                                "core/api/workflow",
-                                "core/api/issues",
-                                "core/api/comments",
+                                { autogenerate: { directory: "core/api" } },
                             ],
                         },
                         {
                             label: "Tables",
                             items: [
-                                "core/tables",
-                                "core/tables/workspace",
-                                "core/tables/issue",
-                                "core/tables/comment",
-                                "core/tables/status",
-                                "core/tables/interval",
-                                "core/tables/user",
-                                "core/tables/provider",
-                                "core/tables/user-identity",
-                                "core/tables/role",
-                                "core/tables/user-role",
-                                "core/tables/attachment",
+                                { autogenerate: { directory: "core/tables" } },
                             ],
                         },
                         {
                             label: "Status",
                             items: [
-                                "core/status",
-                                "core/status/incident",
-                                "core/status/repair",
+                                { autogenerate: { directory: "core/status" } },
                             ],
                         },
                     ],
                 },
                 {
                     label: "ClientJ",
-                    items: [
-                        "client-j",
-                        "client-j/user-flows",
-                        "client-j/application-structure",
-                        "client-j/core-integration",
-                    ],
+                    items: [{ autogenerate: { directory: "client-j" } }],
                 },
                 {
                     label: "ClientL",
-                    items: [
-                        "client-l",
-                        "client-l/user-flows",
-                        "client-l/application-structure",
-                        "client-l/core-integration",
-                    ],
+                    items: [{ autogenerate: { directory: "client-l" } }],
                 },
                 {
                     label: "Comparisons",
-                    items: [
-                        "comparisons/clients",
-                        "comparisons/implementation-notes",
-                    ],
+                    items: [{ autogenerate: { directory: "comparisons" } }],
                 },
-                { label: "Reference", items: ["reference/glossary"] },
+                {
+                    label: "Reference",
+                    items: [{ autogenerate: { directory: "reference" } }],
+                },
                 {
                     label: "Appendix: The 9L-SRE World",
-                    items: ["appendix", "appendix/agent-roster"],
+                    items: [{ autogenerate: { directory: "appendix" } }],
                 },
             ],
         }),

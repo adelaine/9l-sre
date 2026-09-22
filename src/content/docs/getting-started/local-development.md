@@ -41,7 +41,7 @@ Repos/
 └── 9l-sre-clientl/  # Planned React client
 ```
 
-Documentation source lives in `9l-sre/src/content/docs/`. Each page has a title and description in YAML frontmatter. The content collection is configured in `src/content.config.ts`, and sidebar order is defined in `astro.config.mjs`. Use site routes such as `/core/` when linking between pages.
+Documentation source lives in `9l-sre/src/content/docs/`. Each page has a title and description in YAML frontmatter. The content collection is configured in `src/content.config.ts`, and sidebar section labels and order are defined in `astro.config.mjs`. Pages within each configured directory are added automatically; overview pages use optional `sidebar.order` frontmatter to appear first. Other pages omit it and sort alphabetically by file ID after the overview. Core’s overview, domain model, and ERD remain explicit links above its generated API, Tables, and Status groups. Use site routes such as `/core/` when linking between pages.
 
 ## Setup information to add with the code
 

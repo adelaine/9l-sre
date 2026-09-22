@@ -1,6 +1,8 @@
 ---
 title: Status overview
 description: Workspace-specific workflow examples with role permissions, Admin override, and required resolution on closure.
+sidebar:
+    order: 10
 ---
 
 Each workspace owns its statuses and roles. The flow pages define exactly which roles can make each move. Incident staff may skip stages; repair technicians follow a structured intake and repair flow.

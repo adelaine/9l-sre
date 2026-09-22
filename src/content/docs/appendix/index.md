@@ -1,6 +1,8 @@
 ---
 title: "Appendix: The 9L-SRE World"
 description: The fictional setting and characters behind the incident-response demo.
+sidebar:
+    order: 10
 ---
 
 9L-SRE is set in a cyberpunk world where digital ghosts haunt servers, networks, and hardware. Reporters submit sightings, and a feline response team investigates the incidents.
