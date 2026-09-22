@@ -28,4 +28,16 @@ npm run build
 npm run preview
 ```
 
-`validate` runs ESLint, Prettier checks, and Astro diagnostics. The build generates the static site and search index in `dist/`. Deployment and a public site URL have not been configured.
+`validate` runs ESLint, Prettier checks, and Astro diagnostics. The build generates the static site and search index in `dist/`.
+
+## Deployment
+
+The site URL is `https://forge.ctrlcatworks.com`. `wrangler.jsonc` configures a Cloudflare Worker named `9l-sre` to serve `dist/`, use the generated 404 page, and bind the custom domain.
+
+After building, deploy from an authenticated Cloudflare account with access to the domain:
+
+```sh
+npx wrangler deploy
+```
+
+Committing this configuration does not deploy the site or change DNS by itself.

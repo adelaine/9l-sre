@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
 export default defineConfig({
+    site: "https://forge.ctrlcatworks.com",
     trailingSlash: "always",
     integrations: [
         starlight({
