@@ -18,13 +18,13 @@ Describes an issue’s current progress within its workspace.
 | Incident Report        | Reported, Investigating, Processing, Stalled                                     | Completed, Not Applicable         |
 | Haunted Machine Repair | Reported, In Transit, Acquired — Storage, Acquired — With Technician, Processing | Completed, Failed, Not Applicable |
 
-In repair, In Transit and Storage are optional. With Technician indicates physical custody before work starts; Processing means repair is underway. These examples remain unstructured for review.
+In repair, In Transit and Storage are optional. With Technician indicates physical custody before work starts; Processing means repair is underway. Incident and repair transitions are defined on their [separate flow pages](/core/status/).
 
 ## Initial status and transitions
 
 Reported is the only allowed initial status in every workspace, including for Admin. Each workspace must seed its Reported status as unfinished.
 
-The [workflow diagrams](/core/api/status-transitions/) define possible role-permitted moves and the Admin override. Closed issues may reopen. Any closed destination requires a nonblank Issue resolution, including Admin moves between closed statuses. A closed issue’s resolution cannot be cleared.
+The [workflow diagrams](/core/status/) define possible role-permitted moves and the Admin override. Closed issues may reopen. Any closed destination requires a nonblank Issue resolution, including Admin moves between closed statuses. A closed issue’s resolution cannot be cleared.
 
 ## Minimum fields
 

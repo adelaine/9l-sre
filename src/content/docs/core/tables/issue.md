@@ -16,7 +16,7 @@ Represents a report and the work needed to handle it.
 
 ## Initial status
 
-Every new issue must start in **Reported**, regardless of the user’s role. No other initial status is allowed. Subsequent changes follow the [role-controlled status transitions](/core/api/status-transitions/).
+Every new issue must start in **Reported**, regardless of the user’s role. No other initial status is allowed. Subsequent changes follow the [role-controlled status transitions](/core/status/).
 
 ## Minimum fields
 
@@ -37,7 +37,7 @@ Physical database types remain to be defined.
 
 `resolution` is optional plain text while the issue is unfinished. Every move to a closed status requires non-whitespace text, supplied in the same transition or already stored on the issue. Validate and save status and resolution atomically; rejection leaves both unchanged. Admin overrides follow this rule too.
 
-A closed issue cannot have its resolution cleared. Reopening retains it; it may then be edited or cleared while unfinished. See the [workflow acceptance criteria](/core/api/status-transitions/#acceptance-criteria).
+A closed issue cannot have its resolution cleared. Reopening retains it; it may then be edited or cleared while unfinished. See the [workflow acceptance criteria](/core/status/#acceptance-criteria).
 
 ## Display response
 

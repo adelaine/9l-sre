@@ -23,7 +23,7 @@ This entity relationship diagram (ERD) defines the issue tracker’s relationshi
 - Each Role belongs to exactly one Workspace. A workspace defines its own roles.
 - UserRole connects exactly one User to exactly one Role. The workspace comes through the Role, with no direct Workspace–UserRole relationship.
 - A user joins a workspace through a role assignment and can have only one role per workspace. Users no longer have access to every workspace by default.
-- Each role specifies its permitted [status transitions](/core/api/status-transitions/) within its workspace.
+- Each role specifies its permitted [status transitions](/core/status/) within its workspace.
 - Issue descriptions and comments can mention attachment filenames as ordinary text. There is no dedicated reference field or comment-to-attachment relationship.
 
 In the diagram, **1** means exactly one, **0..1** means optional and at most one, and **0..*** means zero or more. Labels beside an entity state how many instances can relate to one instance at the other end.
@@ -50,4 +50,4 @@ erDiagram
     Provider ||--o{ UserIdentity : authenticates
 ```
 
-See [Tables](/core/api/schema/) for each entity’s purpose and relationships.
+See [Tables](/core/tables/) for each entity’s purpose and relationships.

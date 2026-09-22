@@ -13,7 +13,7 @@ Defines a role owned by one workspace. Users join that workspace through assignm
 
 ## Status permissions
 
-Each role specifies the individual [status transitions](/core/api/status-transitions/) it permits within its workspace. Permission for one transition does not imply permission for its reverse or any other transition. Forward skips, backward moves, entering or leaving Stalled, and reopening each require explicit permission.
+Each role specifies the individual [status transitions](/core/status/) it permits within its workspace. Permission for one transition does not imply permission for its reverse or any other transition. Forward skips, backward moves, entering or leaving Stalled, and reopening each require explicit permission.
 
 ## Workspace examples
 
@@ -22,7 +22,7 @@ Each role specifies the individual [status transitions](/core/api/status-transit
 | Incident Report        | Reporter, Agent, Support, Supervisor, Admin |
 | Haunted Machine Repair | Reporter, Technician, Admin                 |
 
-These are separate workspace-owned roles, even when names match. Individual non-Admin transition permissions remain to be defined.
+These are separate workspace-owned roles, even when names match. The [Incident Report](/core/status/incident/) and [repair](/core/status/repair/) pages define their transition permissions. Support means Agent Support: scouting, spotting, equipment, and inventory assistance.
 
 Admin can set an existing issue to any status in its own workspace, including moving between closed statuses. It cannot create an issue outside Reported, use another workspace’s status, or bypass the nonblank Resolution requirement for a closed destination.
 

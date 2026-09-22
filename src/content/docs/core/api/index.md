@@ -8,8 +8,8 @@ Core is intended to expose an application programming interface (API) that both 
 ## Issue tracker model
 
 - [Entity relationship diagram](/core/api/datadiagram/): the agreed entities and relationships.
-- [Status transitions](/core/api/status-transitions/): status changes and reopening permitted by workspace roles.
-- [Tables](/core/api/schema/): each entity’s purpose and relationships.
+- [Status transitions](/core/status/): status changes and reopening permitted by workspace roles.
+- [Tables](/core/tables/): each entity’s purpose and relationships.
 
 ## Initial API inventory
 
@@ -35,22 +35,22 @@ Google is the first enabled provider. Microsoft, GitHub, Apple, and Facebook are
 
 After successful external authentication and email verification, create the User and UserIdentity on first sign-in or retrieve the existing account. There is no separate `POST /users`. Email is required and unique on User; the internal User ID remains its primary key. An unverified provider email cannot establish or link an account. If trusted verification is unavailable from the provider, email verification must complete before access is granted. Matching email text alone does not authorize account linking; the proof and linking flow remain to be specified.
 
-[Provider](/core/api/schema/provider/) stores the provider catalogue. [UserIdentity](/core/api/schema/user-identity/) links User and Provider using their IDs as its composite primary key.
+[Provider](/core/tables/provider/) stores the provider catalogue. [UserIdentity](/core/tables/user-identity/) links User and Provider using their IDs as its composite primary key.
 
 ## Minimum issue flow
 
 1. Authenticate externally and establish a verified User and UserIdentity.
 2. Assign the new reporter a role in the seeded workspace.
 3. Create an issue with a title and optional description and resolution. The server supplies the ID, authenticated reporter, creation timestamp, and its workspace’s Reported status. Omitted resolution is returned as null.
-4. Retrieve the issue by ID. Both creation and retrieval return the [issue display response](/core/api/schema/issue/#display-response).
+4. Retrieve the issue by ID. Both creation and retrieval return the [issue display response](/core/tables/issue/#display-response).
 
 **Open decision:** how the new reporter receives a workspace role. Automatic assignment to a seeded Reporter role has been proposed but not agreed. UserRole cannot be seeded ahead of a newly created User; this decision must be resolved before the end-to-end flow can be implemented.
 
-The [Tables overview](/core/api/schema/) marks the minimum tables. Comments, attachments, intervals, assignment, and status-transition APIs are deferred from the first milestone.
+The [Tables overview](/core/tables/) marks the minimum tables. Comments, attachments, intervals, assignment, and status-transition APIs are deferred from the first milestone.
 
 ## Workflow examples
 
-[Incident Report and Haunted Machine Repair](/core/api/status-transitions/) use separate workspace-owned statuses and roles. Transitions remain unstructured for review, with Admin override and a nonblank Resolution required for any closed status. Transition APIs remain outside the first creation-and-display milestone.
+[Incident Report](/core/status/incident/) and [Haunted Machine Repair](/core/status/repair/) use separate workspace-owned statuses and roles. Each flow defines role-specific transitions, with Admin override and a nonblank Resolution required for any closed status. Transition APIs remain outside the first creation-and-display milestone.
 
 ## Contract documentation
 

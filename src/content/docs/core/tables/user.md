@@ -23,4 +23,4 @@ Represents the agent’s login account and profile within the issue tracker. Cha
 
 Physical database types remain to be defined.
 
-There are no password fields. A User has zero or more [UserIdentity](/core/api/schema/user-identity/) records, with one identity per provider. New reporter accounts are created after successful external sign-in and verified email ownership.
+There are no password fields. A User has zero or more [UserIdentity](/core/tables/user-identity/) records, with one identity per provider. New reporter accounts are created after successful external sign-in and verified email ownership.

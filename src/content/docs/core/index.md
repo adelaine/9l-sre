@@ -15,5 +15,5 @@ Both clients should apply the same rules and interpret the same data consistentl
 
 - [API overview](/core/api/): intended capabilities and contract documentation.
 - [Entity relationship diagram](/core/api/datadiagram/): the agreed issue-tracking model.
-- [Tables](/core/api/schema/): entity descriptions and relationships.
+- [Tables](/core/tables/): entity descriptions and relationships.
 - [Data and reset](/core/data-and-reset/): demo restoration planning.

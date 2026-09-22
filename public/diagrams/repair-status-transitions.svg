@@ -1,27 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1060" viewBox="0 0 1200 1060" role="img" aria-labelledby="title description">
-<title id="title">Haunted Machine Repair workflow</title><desc id="description">Unstructured workflow. New issues start only at Reported. Unfinished: Reported, In Transit, Acquired — Storage, Acquired — With Technician, Processing. Closed: Completed, Failed, Not Applicable. Role-permitted moves connect unfinished statuses and allow closure and reopening. Admin may set any existing issue status in its workspace. Every closed destination requires nonblank resolution.</desc>
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#526581"/></marker></defs>
-<style>text{font-family:system-ui,sans-serif;fill:#172b4d}.name{font-size:22px;font-weight:650;text-anchor:middle}.note{font-size:18px;text-anchor:middle}.edge{fill:none;stroke:#526581;stroke-width:2.5;marker-start:url(#arrow);marker-end:url(#arrow)}.state{fill:#fff;stroke:#64748b;stroke-width:2}</style>
-<rect width="1200" height="1060" fill="#f8fafc"/>
-<text x="48" y="48" font-size="28" font-weight="700">Haunted Machine Repair</text>
-<text x="48" y="84" font-size="18">Roles: Reporter, Technician, Admin</text>
-<rect x="80" y="125" width="1040" height="425" rx="16" fill="#edf2f8" stroke="#64748b" stroke-dasharray="7 5"/>
-<text x="600" y="165" class="name">Unfinished statuses · role-permitted moves between any pair</text>
-<circle cx="118" cy="253" r="8" fill="#172b4d"/><path d="M126 253 H190" stroke="#526581" stroke-width="2.5" marker-end="url(#arrow)"/>
-<text x="95" y="220" font-size="15">New issue</text>
-<rect class="state" x="190" y="215" width="340" height="76" rx="10"/><text x="360.0" y="260" class="name">Reported</text>
-<rect class="state" x="640" y="215" width="340" height="76" rx="10"/><text x="810.0" y="260" class="name">In Transit</text>
-<rect class="state" x="110" y="340" width="290" height="76" rx="10"/><text x="255.0" y="385" class="name">Acquired — Storage</text>
-<rect class="state" x="425" y="340" width="385" height="76" rx="10"/><text x="617.5" y="385" class="name">Acquired — With Technician</text>
-<rect class="state" x="835" y="340" width="260" height="76" rx="10"/><text x="965.0" y="385" class="name">Processing</text>
-<text x="600" y="492" class="note">In Transit and Storage are optional; all unfinished stages may be skipped when permitted.</text>
-<path class="edge" d="M250 550 V730"/><rect x="110" y="730" width="280" height="80" rx="10" fill="#e8f2ed" stroke="#3f7460" stroke-width="2"/><text x="250" y="779" class="name">Completed</text>
-<path class="edge" d="M600 550 V730"/><rect x="460" y="730" width="280" height="80" rx="10" fill="#e8f2ed" stroke="#3f7460" stroke-width="2"/><text x="600" y="779" class="name">Failed</text>
-<path class="edge" d="M950 550 V730"/><rect x="810" y="730" width="280" height="80" rx="10" fill="#e8f2ed" stroke="#3f7460" stroke-width="2"/><text x="950" y="779" class="name">Not Applicable</text>
-<rect x="340" y="608" width="520" height="76" rx="8" fill="#f8fafc"/><text x="600" y="636" class="note">↓ Close with nonblank Resolution</text><text x="600" y="667" class="note">↑ Reopen into any unfinished status; retain Resolution</text>
-<text x="600" y="860" class="note">Grouped arrows apply to every unfinished status. Each direction is permission-controlled.</text>
-<rect x="80" y="900" width="1040" height="115" rx="12" fill="#fff4dc" stroke="#ad8542"/>
-<text x="600" y="934" class="name">Admin override: any status within this workspace</text>
-<text x="600" y="966" class="note">Includes moves between closed statuses. Nonblank Resolution is still required on closure.</text>
-<text x="600" y="994" class="note">New issues always start in Reported. Closed issues cannot have their Resolution cleared.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1470" viewBox="0 0 1200 1470" role="img" aria-labelledby="title description"><title id="title">Haunted Machine Repair role-specific transitions</title><desc id="description">Structured repair flow. Each row shows the role, source statuses and destinations. In Transit and Storage can be skipped. Technician must reach With Technician and Processing before completion or failure. Reporter reopens only their own issues to Reported. Admin may override within the workspace; Resolution remains required on closure.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#526581"/></marker></defs><style>text{font-family:system-ui,sans-serif;fill:#172b4d}.value{font-size:19px}.role{font-size:17px;font-weight:650}.box{fill:#fff;stroke:#64748b;stroke-width:1.5}.arrow{stroke:#526581;stroke-width:2;marker-end:url(#arrow)}</style><rect width="1200" height="1470" fill="#f8fafc"/><text x="40" y="48" font-size="28" font-weight="700">Haunted Machine Repair</text><text x="40" y="86" font-size="18">Allowed transitions by role · each destination requires the role shown</text><text x="40" y="124" font-size="17">In Transit and Storage are optional. Technician must reach custody and Processing before closure as Completed or Failed.</text>
+<text x="55" y="169" font-size="17">FROM</text><text x="500" y="169" font-size="17">TO</text>
+<text class="role" x="45" y="195">Any role</text><rect class="box" x="40" y="207" width="370" height="83" rx="8"/><path class="arrow" d="M425 248 H475"/><rect class="box" x="490" y="207" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="234">New issue</text>
+<text class="value" x="505" y="234">Reported only</text>
+<text class="role" x="45" y="320">Technician</text><rect class="box" x="40" y="332" width="370" height="83" rx="8"/><path class="arrow" d="M425 373 H475"/><rect class="box" x="490" y="332" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="359">Reported</text>
+<text class="value" x="505" y="359">In Transit; Acquired — Storage; Acquired — With Technician;</text>
+<text class="value" x="505" y="383">Not Applicable</text>
+<text class="role" x="45" y="445">Technician</text><rect class="box" x="40" y="457" width="370" height="83" rx="8"/><path class="arrow" d="M425 498 H475"/><rect class="box" x="490" y="457" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="484">In Transit</text>
+<text class="value" x="505" y="484">Acquired — Storage; Acquired — With Technician; Not</text>
+<text class="value" x="505" y="508">Applicable</text>
+<text class="role" x="45" y="570">Technician</text><rect class="box" x="40" y="582" width="370" height="83" rx="8"/><path class="arrow" d="M425 623 H475"/><rect class="box" x="490" y="582" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="609">Acquired — Storage</text>
+<text class="value" x="505" y="609">Acquired — With Technician; Not Applicable</text>
+<text class="role" x="45" y="695">Technician</text><rect class="box" x="40" y="707" width="370" height="83" rx="8"/><path class="arrow" d="M425 748 H475"/><rect class="box" x="490" y="707" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="734">Acquired — With Technician</text>
+<text class="value" x="505" y="734">Acquired — Storage; Processing; Not Applicable</text>
+<text class="role" x="45" y="820">Technician</text><rect class="box" x="40" y="832" width="370" height="83" rx="8"/><path class="arrow" d="M425 873 H475"/><rect class="box" x="490" y="832" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="859">Processing</text>
+<text class="value" x="505" y="859">Acquired — With Technician; Completed; Failed; Not</text>
+<text class="value" x="505" y="883">Applicable</text>
+<text class="role" x="45" y="945">Technician</text><rect class="box" x="40" y="957" width="370" height="83" rx="8"/><path class="arrow" d="M425 998 H475"/><rect class="box" x="490" y="957" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="984">Completed; Failed; Not</text>
+<text class="value" x="55" y="1008">Applicable</text>
+<text class="value" x="505" y="984">Acquired — With Technician</text>
+<text class="role" x="45" y="1070">Reporter</text><rect class="box" x="40" y="1082" width="370" height="83" rx="8"/><path class="arrow" d="M425 1123 H475"/><rect class="box" x="490" y="1082" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="1109">Completed; Failed; Not</text>
+<text class="value" x="55" y="1133">Applicable</text>
+<text class="value" x="505" y="1109">Reported (own issues only)</text>
+<text class="role" x="45" y="1195">Admin</text><rect class="box" x="40" y="1207" width="370" height="83" rx="8"/><path class="arrow" d="M425 1248 H475"/><rect class="box" x="490" y="1207" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="1234">Any existing status</text>
+<text class="value" x="505" y="1234">Any status in this workspace</text>
+<text x="40" y="1376" font-size="18">Every closed destination requires nonblank Resolution, including Admin override.</text><text x="40" y="1409" font-size="18">Reopening retains Resolution. Reporter ownership is checked against the issue’s reporter.</text><text x="40" y="1442" font-size="18">Unlisted moves are denied. Admin cannot bypass workspace or initial-status rules.</text></svg>

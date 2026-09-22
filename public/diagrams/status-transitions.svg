@@ -1,25 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1060" viewBox="0 0 1200 1060" role="img" aria-labelledby="title description">
-<title id="title">Incident Report workflow</title><desc id="description">Unstructured workflow. New issues start only at Reported. Unfinished: Reported, Investigating, Processing, Stalled. Closed: Completed, Not Applicable. Role-permitted moves connect unfinished statuses and allow closure and reopening. Admin may set any existing issue status in its workspace. Every closed destination requires nonblank resolution.</desc>
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#526581"/></marker></defs>
-<style>text{font-family:system-ui,sans-serif;fill:#172b4d}.name{font-size:22px;font-weight:650;text-anchor:middle}.note{font-size:18px;text-anchor:middle}.edge{fill:none;stroke:#526581;stroke-width:2.5;marker-start:url(#arrow);marker-end:url(#arrow)}.state{fill:#fff;stroke:#64748b;stroke-width:2}</style>
-<rect width="1200" height="1060" fill="#f8fafc"/>
-<text x="48" y="48" font-size="28" font-weight="700">Incident Report</text>
-<text x="48" y="84" font-size="18">Roles: Reporter, Agent, Support, Supervisor, Admin</text>
-<rect x="80" y="125" width="1040" height="425" rx="16" fill="#edf2f8" stroke="#64748b" stroke-dasharray="7 5"/>
-<text x="600" y="165" class="name">Unfinished statuses · role-permitted moves between any pair</text>
-<circle cx="118" cy="253" r="8" fill="#172b4d"/><path d="M126 253 H190" stroke="#526581" stroke-width="2.5" marker-end="url(#arrow)"/>
-<text x="95" y="220" font-size="15">New issue</text>
-<rect class="state" x="190" y="215" width="340" height="76" rx="10"/><text x="360.0" y="260" class="name">Reported</text>
-<rect class="state" x="640" y="215" width="340" height="76" rx="10"/><text x="810.0" y="260" class="name">Investigating</text>
-<rect class="state" x="190" y="340" width="340" height="76" rx="10"/><text x="360.0" y="385" class="name">Processing</text>
-<rect class="state" x="640" y="340" width="340" height="76" rx="10"/><text x="810.0" y="385" class="name">Stalled</text>
-<text x="600" y="492" class="note">Forward skips and backward moves require permission for the exact direction.</text>
-<path class="edge" d="M340 550 V730"/><rect x="200" y="730" width="280" height="80" rx="10" fill="#e8f2ed" stroke="#3f7460" stroke-width="2"/><text x="340" y="779" class="name">Completed</text>
-<path class="edge" d="M860 550 V730"/><rect x="720" y="730" width="280" height="80" rx="10" fill="#e8f2ed" stroke="#3f7460" stroke-width="2"/><text x="860" y="779" class="name">Not Applicable</text>
-<rect x="340" y="608" width="520" height="76" rx="8" fill="#f8fafc"/><text x="600" y="636" class="note">↓ Close with nonblank Resolution</text><text x="600" y="667" class="note">↑ Reopen into any unfinished status; retain Resolution</text>
-<text x="600" y="860" class="note">Grouped arrows apply to every unfinished status. Each direction is permission-controlled.</text>
-<rect x="80" y="900" width="1040" height="115" rx="12" fill="#fff4dc" stroke="#ad8542"/>
-<text x="600" y="934" class="name">Admin override: any status within this workspace</text>
-<text x="600" y="966" class="note">Includes moves between closed statuses. Nonblank Resolution is still required on closure.</text>
-<text x="600" y="994" class="note">New issues always start in Reported. Closed issues cannot have their Resolution cleared.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1345" viewBox="0 0 1200 1345" role="img" aria-labelledby="title description">
+<title id="title">Incident Report role-specific status transitions</title>
+<desc id="description">Each row shows the role, source statuses and permitted destinations. Multiple source and destination values allow each combination, except changing a status to itself. Every closed destination requires a nonblank Resolution. Reporter can reopen only their own issues to Reported. Admin override applies within the workspace only.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#526581"/></marker></defs>
+<style>text{font-family:system-ui,sans-serif;fill:#172b4d}.value{font-size:19px}.role{font-size:17px;font-weight:650}.box{fill:#fff;stroke:#64748b;stroke-width:1.5}.arrow{stroke:#526581;stroke-width:2;marker-end:url(#arrow)}</style>
+<rect width="1200" height="1345" fill="#f8fafc"/>
+<text x="40" y="48" font-size="28" font-weight="700">Incident Report</text>
+<text x="40" y="86" font-size="18">Allowed transitions by role · each destination requires the role shown</text>
+<text x="40" y="124" font-size="17">Unfinished (incident): Reported, Investigating, Processing, Stalled.</text>
+<text x="55" y="169" font-size="17">FROM</text><text x="500" y="169" font-size="17">TO</text>
+<text class="role" x="45" y="195">Any role</text><rect class="box" x="40" y="207" width="370" height="83" rx="8"/><path class="arrow" d="M425 248 H475"/><rect class="box" x="490" y="207" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="234">New issue</text>
+<text class="value" x="505" y="234">Reported only</text>
+<text class="role" x="45" y="320">Reporter</text><rect class="box" x="40" y="332" width="370" height="83" rx="8"/><path class="arrow" d="M425 373 H475"/><rect class="box" x="490" y="332" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="359">Completed, Not Applicable</text>
+<text class="value" x="505" y="359">Reported (own issues only)</text>
+<text class="role" x="45" y="445">Agent, Support, Supervisor</text><rect class="box" x="40" y="457" width="370" height="83" rx="8"/><path class="arrow" d="M425 498 H475"/><rect class="box" x="490" y="457" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="484">Any unfinished status</text>
+<text class="value" x="505" y="484">Any other unfinished status</text>
+<text class="role" x="45" y="570">Agent, Supervisor</text><rect class="box" x="40" y="582" width="370" height="83" rx="8"/><path class="arrow" d="M425 623 H475"/><rect class="box" x="490" y="582" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="609">Any unfinished status</text>
+<text class="value" x="505" y="609">Completed</text>
+<text class="role" x="45" y="695">Supervisor</text><rect class="box" x="40" y="707" width="370" height="83" rx="8"/><path class="arrow" d="M425 748 H475"/><rect class="box" x="490" y="707" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="734">Any unfinished status</text>
+<text class="value" x="505" y="734">Not Applicable</text>
+<text class="role" x="45" y="820">Agent, Supervisor</text><rect class="box" x="40" y="832" width="370" height="83" rx="8"/><path class="arrow" d="M425 873 H475"/><rect class="box" x="490" y="832" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="859">Completed</text>
+<text class="value" x="505" y="859">Any unfinished status</text>
+<text class="role" x="45" y="945">Supervisor</text><rect class="box" x="40" y="957" width="370" height="83" rx="8"/><path class="arrow" d="M425 998 H475"/><rect class="box" x="490" y="957" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="984">Not Applicable</text>
+<text class="value" x="505" y="984">Any unfinished status</text>
+<text class="role" x="45" y="1070">Admin</text><rect class="box" x="40" y="1082" width="370" height="83" rx="8"/><path class="arrow" d="M425 1123 H475"/><rect class="box" x="490" y="1082" width="670" height="83" rx="8"/>
+<text class="value" x="55" y="1109">Any existing status</text>
+<text class="value" x="505" y="1109">Any status in this workspace</text>
+<text x="40" y="1251" font-size="18">Every closed destination requires nonblank Resolution, including Admin override.</text><text x="40" y="1284" font-size="18">Reopening retains Resolution. Reporter ownership is checked against the issue’s reporter.</text><text x="40" y="1317" font-size="18">Unlisted moves are denied. Admin cannot bypass workspace or initial-status rules.</text></svg>
