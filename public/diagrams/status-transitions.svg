@@ -14,16 +14,16 @@
 <text class="role" x="45" y="320">Reporter</text><rect class="box" x="40" y="332" width="370" height="83" rx="8"/><path class="arrow" d="M425 373 H475"/><rect class="box" x="490" y="332" width="670" height="83" rx="8"/>
 <text class="value" x="55" y="359">Completed, Not Applicable</text>
 <text class="value" x="505" y="359">Reported (own issues only)</text>
-<text class="role" x="45" y="445">Agent, Support, Supervisor</text><rect class="box" x="40" y="457" width="370" height="83" rx="8"/><path class="arrow" d="M425 498 H475"/><rect class="box" x="490" y="457" width="670" height="83" rx="8"/>
+<text class="role" x="45" y="445">Operative, Support, Supervisor</text><rect class="box" x="40" y="457" width="370" height="83" rx="8"/><path class="arrow" d="M425 498 H475"/><rect class="box" x="490" y="457" width="670" height="83" rx="8"/>
 <text class="value" x="55" y="484">Any unfinished status</text>
 <text class="value" x="505" y="484">Any other unfinished status</text>
-<text class="role" x="45" y="570">Agent, Supervisor</text><rect class="box" x="40" y="582" width="370" height="83" rx="8"/><path class="arrow" d="M425 623 H475"/><rect class="box" x="490" y="582" width="670" height="83" rx="8"/>
+<text class="role" x="45" y="570">Operative, Supervisor</text><rect class="box" x="40" y="582" width="370" height="83" rx="8"/><path class="arrow" d="M425 623 H475"/><rect class="box" x="490" y="582" width="670" height="83" rx="8"/>
 <text class="value" x="55" y="609">Any unfinished status</text>
 <text class="value" x="505" y="609">Completed</text>
 <text class="role" x="45" y="695">Supervisor</text><rect class="box" x="40" y="707" width="370" height="83" rx="8"/><path class="arrow" d="M425 748 H475"/><rect class="box" x="490" y="707" width="670" height="83" rx="8"/>
 <text class="value" x="55" y="734">Any unfinished status</text>
 <text class="value" x="505" y="734">Not Applicable</text>
-<text class="role" x="45" y="820">Agent, Supervisor</text><rect class="box" x="40" y="832" width="370" height="83" rx="8"/><path class="arrow" d="M425 873 H475"/><rect class="box" x="490" y="832" width="670" height="83" rx="8"/>
+<text class="role" x="45" y="820">Operative, Supervisor</text><rect class="box" x="40" y="832" width="370" height="83" rx="8"/><path class="arrow" d="M425 873 H475"/><rect class="box" x="490" y="832" width="670" height="83" rx="8"/>
 <text class="value" x="55" y="859">Completed</text>
 <text class="value" x="505" y="859">Any unfinished status</text>
 <text class="role" x="45" y="945">Supervisor</text><rect class="box" x="40" y="957" width="370" height="83" rx="8"/><path class="arrow" d="M425 998 H475"/><rect class="box" x="490" y="957" width="670" height="83" rx="8"/>

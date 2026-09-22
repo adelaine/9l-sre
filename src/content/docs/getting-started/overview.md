@@ -9,9 +9,9 @@ sidebar:
 
 ## The demo scenario
 
-A reporter notices unusual behavior in a server, network, or device and submits an incident. A response agent investigates the report and records its resolution. The reporter can follow the incident's progress.
+A reporter notices unusual behavior in a server, network, or device and submits an incident. A response operative investigates the report and records its resolution. The reporter can follow the incident's progress.
 
-Moxie “Hotfix” Mallow is the selected first playable demo agent. Chief Maxwell “Watchdog” Blackwell is her supervisor. Their biographies and the wider cast live in the [Agent Roster](/appendix/agent-roster/).
+Moxie “Hotfix” Mallow is the selected first playable demo operative. Chief Maxwell “Watchdog” Blackwell is her supervisor. Their biographies and the wider cast live in the [Operative Roster](/appendix/operative-roster/).
 
 ## Components
 

@@ -18,7 +18,7 @@ ClientJ and ClientL are two planned interfaces for the same incident-response do
 
 ## What should stay consistent
 
-The meaning of an incident, agent identity, accepted updates, validation rules, and reset behavior should come from Core. Interface choices should not create incompatible interpretations of the same data.
+The meaning of an incident, operative identity, accepted updates, validation rules, and reset behavior should come from Core. Interface choices should not create incompatible interpretations of the same data.
 
 ## What can differ
 

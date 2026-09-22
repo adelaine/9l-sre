@@ -5,6 +5,9 @@ import starlightThemeFlexoki from "starlight-theme-flexoki";
 export default defineConfig({
     site: "https://forge.ctrlcatworks.com",
     trailingSlash: "always",
+    redirects: {
+        "/appendix/agent-roster/": "/appendix/operative-roster/",
+    },
     integrations: [
         starlight({
             title: "9L-SRE",

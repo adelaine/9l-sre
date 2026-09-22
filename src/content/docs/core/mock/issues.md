@@ -79,7 +79,7 @@ List and detail responses contain the same complete issue objects. No authentica
     },
     "createdAt": "2026-09-22T09:00:00Z",
     "assignee": {
-        "id": "user-agent",
+        "id": "user-operative",
         "displayName": "Sam Example"
     },
     "interval": {
@@ -92,7 +92,7 @@ List and detail responses contain the same complete issue objects. No authentica
             "id": "comment-001",
             "issueId": "issue-002",
             "author": {
-                "id": "user-agent",
+                "id": "user-operative",
                 "displayName": "Sam Example"
             },
             "body": "Reviewing timeout-log.txt for the affected requests.",
@@ -104,7 +104,7 @@ List and detail responses contain the same complete issue objects. No authentica
             "id": "attachment-001",
             "issueId": "issue-002",
             "uploader": {
-                "id": "user-agent",
+                "id": "user-operative",
                 "displayName": "Sam Example"
             },
             "filename": "timeout-log.txt",
@@ -143,7 +143,7 @@ List and detail responses contain the same complete issue objects. No authentica
     },
     "createdAt": "2026-09-22T07:00:00Z",
     "assignee": {
-        "id": "user-agent",
+        "id": "user-operative",
         "displayName": "Sam Example"
     },
     "interval": null,

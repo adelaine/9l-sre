@@ -7,13 +7,13 @@ ClientJ has no source structure yet. The following responsibilities provide a st
 
 ## Proposed responsibilities
 
-| Area               | Responsibility                                                       |
-| ------------------ | -------------------------------------------------------------------- |
-| Routing            | Connect navigation and incident URLs to the appropriate views.       |
-| Feature components | Present incident collections, details, forms, and agent information. |
-| Forms              | Collect input and show validation feedback.                          |
-| Services           | Encapsulate communication with Core.                                 |
-| Shared UI          | Provide reusable controls and consistent request feedback.           |
+| Area               | Responsibility                                                           |
+| ------------------ | ------------------------------------------------------------------------ |
+| Routing            | Connect navigation and incident URLs to the appropriate views.           |
+| Feature components | Present incident collections, details, forms, and operative information. |
+| Forms              | Collect input and show validation feedback.                              |
+| Services           | Encapsulate communication with Core.                                     |
+| Shared UI          | Provide reusable controls and consistent request feedback.               |
 
 Keep API access separate from presentation so that request handling can be reused across incident views. Choose a state management approach after the interaction requirements are clear; no additional state library has been selected.
 

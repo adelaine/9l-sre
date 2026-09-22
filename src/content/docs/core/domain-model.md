@@ -15,14 +15,14 @@ The eventual model needs to represent what was reported, its progress, and its r
 
 A reporter submits a sighting and follows its resolution. The project has not yet established whether reporters have accounts, use a shared demo identity, or submit through another mechanism.
 
-## Agent
+## Operative
 
-An agent is a fictional member of the response team. Agents have stored profiles and backstories. Moxie “Hotfix” Mallow is the selected first playable demo agent.
+An operative is a fictional member of the response team. Operatives have stored profiles and backstories. Moxie “Hotfix” Mallow is the selected first playable demo operative.
 
 Character roles such as field responder or supervisor are story details. They do not establish application permissions. The identity and authorization model still needs to be designed.
 
 ## Assignment and progress
 
-The proposed workflow associates an incident with the agent handling it and records progress toward resolution. Assignment rules, status transitions, and any history or diagnostic notes remain design decisions.
+The proposed workflow associates an incident with the operative handling it and records progress toward resolution. Assignment rules, status transitions, and any history or diagnostic notes remain design decisions.
 
 Core should enforce the agreed rules, while each client presents them in its own interface. See the [Core overview](/core/#minimum-issue-flow) for the initial milestone and in-memory H2 data lifecycle.

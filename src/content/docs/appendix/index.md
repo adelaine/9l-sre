@@ -11,8 +11,8 @@ sidebar:
 
 ## The response team
 
-Moxie “Hotfix” Mallow is the selected first playable demo agent. She works under Chief Maxwell “Watchdog” Blackwell. Her partner and friendly rival, Rowan “Runtime” Locke, wants to understand why an incident happened even after Mallow has contained it.
+Moxie “Hotfix” Mallow is the selected first playable demo operative. She works under Chief Maxwell “Watchdog” Blackwell. Her partner and friendly rival, Rowan “Runtime” Locke, wants to understand why an incident happened even after Mallow has contained it.
 
-The [Agent Roster](/appendix/agent-roster/) introduces the wider cast, their backstories, and their relationships. These details give the demo its narrative context; they do not define API fields or application permissions.
+The [Operative Roster](/appendix/operative-roster/) introduces the wider cast, their backstories, and their relationships. These details give the demo its narrative context; they do not define API fields or application permissions.
 
 The initial demo’s in-memory H2 data lifecycle is described in the [Core overview](/core/#minimum-issue-flow).

@@ -9,7 +9,7 @@ ClientJ is the planned Angular frontend in `9l-sre-clientj`. It uses Jira as int
 
 ## Intended experience
 
-The proposed interface gives reporters and response agents a clear way to browse incidents, inspect their details, and follow work through investigation and resolution. Exact screens, board layouts, filters, and editing patterns remain to be designed.
+The proposed interface gives reporters and response operatives a clear way to browse incidents, inspect their details, and follow work through investigation and resolution. Exact screens, board layouts, filters, and editing patterns remain to be designed.
 
 ClientJ uses the shared Core backend. It should express the same incident rules as ClientL while demonstrating Angular's approach to application structure and interaction.
 

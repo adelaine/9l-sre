@@ -1,17 +1,17 @@
 ---
-title: Agent Roster
+title: Operative Roster
 description: The fictional cast, backstories, and relationships of the 9L-SRE world.
 ---
 
 Meet the feline response team from the [9L-SRE world](/appendix/). These profiles provide the characters' narrative background. Their story roles do not establish application permissions.
 
-## Selected demo agent: Moxie “Hotfix” Mallow
+## Selected demo operative: Moxie “Hotfix” Mallow
 
 - **Role:** Field responder
 - **Appearance:** Tortoiseshell
 - **Backstory:** A former alley cat who tracked a ghost through six vending machines using the maintenance tunnels. Excellent under pressure. Her incident reports usually say “fixed it.”
 
-Moxie is the first playable demo agent. Chief Blackwell is her supervisor.
+Moxie is the first playable demo operative. Chief Blackwell is her supervisor.
 
 ## Rowan “Runtime” Locke
 
@@ -49,10 +49,10 @@ Moxie is the first playable demo agent. Chief Blackwell is her supervisor.
 
 ## Lord Graydon
 
-Standalone character bio from the YouTube series; not a playable agent in 9L-SRE.
+Standalone character bio from the YouTube series; not a playable operative in 9L-SRE.
 
 - **Level:** 1
-- **Role:** Agent trainee
+- **Role:** Operative trainee
 - **Skills:** None
 - **Confidence:** Exceptional
 - **Character note:** Her title has been entered into the rank field three times. Someone keeps correcting it.

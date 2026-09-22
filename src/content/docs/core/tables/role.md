@@ -17,12 +17,12 @@ Each role specifies the individual [status transitions](/core/status/) it permit
 
 ## Workspace examples
 
-| Workspace              | Roles                                       |
-| ---------------------- | ------------------------------------------- |
-| Incident Report        | Reporter, Agent, Support, Supervisor, Admin |
-| Haunted Machine Repair | Reporter, Technician, Admin                 |
+| Workspace              | Roles                                           |
+| ---------------------- | ----------------------------------------------- |
+| Incident Report        | Reporter, Operative, Support, Supervisor, Admin |
+| Haunted Machine Repair | Reporter, Technician, Admin                     |
 
-These are separate workspace-owned roles, even when names match. The [Incident Report](/core/status/incident/) and [repair](/core/status/repair/) pages define their transition permissions. Support means Agent Support: scouting, spotting, equipment, and inventory assistance.
+These are separate workspace-owned roles, even when names match. The [Incident Report](/core/status/incident/) and [repair](/core/status/repair/) pages define their transition permissions. Support means Operative Support: scouting, spotting, equipment, and inventory assistance.
 
 Admin can set an existing issue to any status in its own workspace, including moving between closed statuses. It cannot create an issue outside Reported, use another workspace’s status, or bypass the nonblank Resolution requirement for a closed destination.
 

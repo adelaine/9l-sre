@@ -1,9 +1,9 @@
 ---
 title: Incident Report
-description: Incident status transitions for Reporter, Agent, Agent Support, Supervisor, and Admin.
+description: Incident status transitions for Reporter, Operative, Operative Support, Supervisor, and Admin.
 ---
 
-**Roles:** Reporter, Agent, Support, Supervisor, Admin. **Support means Agent Support**, including scouting, spotting, equipment, and inventory assistance. It is not a customer-support or triage role.
+**Roles:** Reporter, Operative, Support, Supervisor, Admin. **Support means Operative Support**, including scouting, spotting, equipment, and inventory assistance. It is not a customer-support or triage role.
 
 The [shared rules](/core/status/) require Reported at creation, workspace-scoped permissions, and nonblank Resolution for every closed destination.
 
@@ -15,17 +15,17 @@ The [shared rules](/core/status/) require Reported at creation, workspace-scoped
 
 Unfinished statuses are **Reported, Investigating, Processing, and Stalled**. Closed statuses are **Completed and Not Applicable**.
 
-| Role                       | From                      | To                           |
-| -------------------------- | ------------------------- | ---------------------------- |
-| Reporter                   | Completed, Not Applicable | Reported (own issues only)   |
-| Agent, Support, Supervisor | Any unfinished status     | Any other unfinished status  |
-| Agent, Supervisor          | Any unfinished status     | Completed                    |
-| Supervisor                 | Any unfinished status     | Not Applicable               |
-| Agent, Supervisor          | Completed                 | Any unfinished status        |
-| Supervisor                 | Not Applicable            | Any unfinished status        |
-| Admin                      | Any existing status       | Any status in this workspace |
+| Role                           | From                      | To                           |
+| ------------------------------ | ------------------------- | ---------------------------- |
+| Reporter                       | Completed, Not Applicable | Reported (own issues only)   |
+| Operative, Support, Supervisor | Any unfinished status     | Any other unfinished status  |
+| Operative, Supervisor          | Any unfinished status     | Completed                    |
+| Supervisor                     | Any unfinished status     | Not Applicable               |
+| Operative, Supervisor          | Completed                 | Any unfinished status        |
+| Supervisor                     | Not Applicable            | Any unfinished status        |
+| Admin                          | Any existing status       | Any status in this workspace |
 
-Agent, Support, and Supervisor may skip stages and move backward among unfinished statuses. Staff permissions apply across the workspace. Support cannot close or reopen an issue. Agent cannot mark an issue Not Applicable or reopen Not Applicable. Reporter may only reopen their own closed issues to Reported; they cannot make other status changes. Only Admin can move directly between closed statuses.
+Operative, Support, and Supervisor may skip stages and move backward among unfinished statuses. Staff permissions apply across the workspace. Support cannot close or reopen an issue. Operative cannot mark an issue Not Applicable or reopen Not Applicable. Reporter may only reopen their own closed issues to Reported; they cannot make other status changes. Only Admin can move directly between closed statuses.
 
 ## Mermaid source
 
@@ -34,30 +34,30 @@ stateDiagram-v2
     direction LR
     state "Not Applicable" as NotApplicable
     [*] --> Reported
-    Reported --> Investigating: Agent, Support, Supervisor
-    Reported --> Processing: Agent, Support, Supervisor
-    Reported --> Stalled: Agent, Support, Supervisor
-    Reported --> Completed: Agent, Supervisor
+    Reported --> Investigating: Operative, Support, Supervisor
+    Reported --> Processing: Operative, Support, Supervisor
+    Reported --> Stalled: Operative, Support, Supervisor
+    Reported --> Completed: Operative, Supervisor
     Reported --> NotApplicable: Supervisor
-    Investigating --> Reported: Agent, Support, Supervisor
-    Investigating --> Processing: Agent, Support, Supervisor
-    Investigating --> Stalled: Agent, Support, Supervisor
-    Investigating --> Completed: Agent, Supervisor
+    Investigating --> Reported: Operative, Support, Supervisor
+    Investigating --> Processing: Operative, Support, Supervisor
+    Investigating --> Stalled: Operative, Support, Supervisor
+    Investigating --> Completed: Operative, Supervisor
     Investigating --> NotApplicable: Supervisor
-    Processing --> Reported: Agent, Support, Supervisor
-    Processing --> Investigating: Agent, Support, Supervisor
-    Processing --> Stalled: Agent, Support, Supervisor
-    Processing --> Completed: Agent, Supervisor
+    Processing --> Reported: Operative, Support, Supervisor
+    Processing --> Investigating: Operative, Support, Supervisor
+    Processing --> Stalled: Operative, Support, Supervisor
+    Processing --> Completed: Operative, Supervisor
     Processing --> NotApplicable: Supervisor
-    Stalled --> Reported: Agent, Support, Supervisor
-    Stalled --> Investigating: Agent, Support, Supervisor
-    Stalled --> Processing: Agent, Support, Supervisor
-    Stalled --> Completed: Agent, Supervisor
+    Stalled --> Reported: Operative, Support, Supervisor
+    Stalled --> Investigating: Operative, Support, Supervisor
+    Stalled --> Processing: Operative, Support, Supervisor
+    Stalled --> Completed: Operative, Supervisor
     Stalled --> NotApplicable: Supervisor
-    Completed --> Reported: Agent, Supervisor, Reporter (own issue)
-    Completed --> Investigating: Agent, Supervisor
-    Completed --> Processing: Agent, Supervisor
-    Completed --> Stalled: Agent, Supervisor
+    Completed --> Reported: Operative, Supervisor, Reporter (own issue)
+    Completed --> Investigating: Operative, Supervisor
+    Completed --> Processing: Operative, Supervisor
+    Completed --> Stalled: Operative, Supervisor
     NotApplicable --> Reported: Supervisor, Reporter (own issue)
     NotApplicable --> Investigating: Supervisor
     NotApplicable --> Processing: Supervisor
@@ -69,7 +69,7 @@ Admin may set any existing issue status in the workspace; its extra arrows are o
 ## Acceptance criteria
 
 - Support can skip Reported → Processing and move Processing → Investigating, but cannot close or reopen.
-- Agent can close an unfinished issue as Completed and reopen Completed into an unfinished status, but cannot close as Not Applicable or reopen that outcome.
+- Operative can close an unfinished issue as Completed and reopen Completed into an unfinished status, but cannot close as Not Applicable or reopen that outcome.
 - Supervisor can close either way and reopen either outcome into any unfinished status.
 - Reporter can reopen their own Completed or Not Applicable issue to Reported only. Reject attempts on another reporter’s issue or to another destination.
 - Non-Admin moves directly between closed statuses are rejected.

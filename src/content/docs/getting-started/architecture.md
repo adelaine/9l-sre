@@ -16,7 +16,7 @@ ClientL — React Router / Redux,              │       └── Data storage:
 
 ## Responsibilities
 
-Core should own authoritative incident and agent data, validation, and the rules that determine which updates are allowed. Keeping these rules in the backend gives both clients a consistent result.
+Core should own authoritative incident and operative data, validation, and the rules that determine which updates are allowed. Keeping these rules in the backend gives both clients a consistent result.
 
 ClientJ and ClientL should own presentation, navigation, forms, and feedback for loading, empty, success, and error states. A client can validate input for usability, but Core still needs to validate requests.
 

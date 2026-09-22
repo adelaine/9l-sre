@@ -7,7 +7,7 @@ Core is the shared Java and Spring Boot application programming interface (API) 
 
 ## Responsibilities
 
-Core owns issue-tracking data and shared business rules: workspaces, issues, comments, statuses, planning intervals, users, attachments, and workspace-specific role assignments. A User represents the agent’s account and profile in the issue tracker; character backstory is outside this model.
+Core owns issue-tracking data and shared business rules: workspaces, issues, comments, statuses, planning intervals, users, attachments, and workspace-specific role assignments. A User represents the operative’s account and profile in the issue tracker; character backstory is outside this model.
 
 Both clients should interpret identifiers, status values, validation failures, and data lifecycle consistently. Their interfaces can differ without changing the meaning of a Core response. Integration plans are documented for [ClientJ](/client-j/core-integration/) and [ClientL](/client-l/core-integration/).
 

@@ -3,7 +3,7 @@ title: ClientJ and Core
 description: Proposed request handling and shared behavior for the Angular client.
 ---
 
-ClientJ is intended to use Core for incident and agent data. Endpoint paths, configuration keys, and authentication are not defined yet.
+ClientJ is intended to use Core for incident and operative data. Endpoint paths, configuration keys, and authentication are not defined yet.
 
 ## Request handling
 

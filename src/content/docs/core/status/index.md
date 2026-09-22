@@ -25,7 +25,7 @@ On reopening, retain the resolution. It may subsequently be edited or cleared wh
 
 ## Workspace flows
 
-- [Incident Report](/core/status/incident/): Reporter, Agent, Support, Supervisor, and Admin.
+- [Incident Report](/core/status/incident/): Reporter, Operative, Support, Supervisor, and Admin.
 - [Haunted Machine Repair](/core/status/repair/): Reporter, Technician, and Admin.
 
 ## Acceptance criteria

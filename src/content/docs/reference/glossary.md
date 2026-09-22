@@ -6,7 +6,7 @@ description: Shared project and domain terminology.
 | Term          | Meaning in this project                                                                                         |
 | ------------- | --------------------------------------------------------------------------------------------------------------- |
 | 9L-SRE        | Nine Lives: Spectral Reliability Engineering, the incident-response demo.                                       |
-| Agent         | A fictional cat member of the response team. A story role does not automatically grant application permissions. |
+| Operative     | A fictional cat member of the response team. A story role does not automatically grant application permissions. |
 | API           | Application programming interface; the contract through which the clients will communicate with Core.           |
 | ClientJ       | The planned Jira-inspired Angular application.                                                                  |
 | ClientL       | The planned Linear-inspired React Router and Redux application.                                                 |

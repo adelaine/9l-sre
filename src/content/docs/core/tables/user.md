@@ -3,7 +3,7 @@ title: User
 description: User purpose and relationships in the issue tracker.
 ---
 
-Represents the agent’s login account and profile within the issue tracker. Character backstory is outside this model.
+Represents the operative’s login account and profile within the issue tracker. Character backstory is outside this model.
 
 ## Relationships
 

@@ -18,7 +18,7 @@ React Router's operating mode and data-loading approach are undecided. The proje
 
 ## State ownership
 
-Core remains authoritative for saved incident and agent data. A client's stored copy should not become a competing source of truth. Give fetched data a clear owner and a defined refresh strategy before sharing it across views.
+Core remains authoritative for saved incident and operative data. A client's stored copy should not become a competing source of truth. Give fetched data a clear owner and a defined refresh strategy before sharing it across views.
 
 Keep temporary form input close to the form unless another feature needs it. If filters become part of navigation, decide whether their state belongs in the URL so that links and browser history behave predictably.
 

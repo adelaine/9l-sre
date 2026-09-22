@@ -3,7 +3,7 @@ title: ClientL and Core
 description: Proposed API access and state synchronization for the React client.
 ---
 
-ClientL is intended to use Core for incident and agent data. Its request implementation, API configuration, and authentication remain undecided.
+ClientL is intended to use Core for incident and operative data. Its request implementation, API configuration, and authentication remain undecided.
 
 ## Data flow
 
