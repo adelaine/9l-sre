@@ -17,4 +17,4 @@ Show pending requests clearly and explain rejected updates. If the implementatio
 
 ## Verification to add
 
-Once connected, verify incident creation and retrieval, validation failures, navigation between updated views, and refresh behavior after a reset. Add configuration and checked request examples alongside the [Core API reference](/core/api/).
+Once connected, verify incident creation and retrieval, validation failures, navigation between updated views, and refresh behavior after a reset. Add configuration and checked request examples alongside the [Core API resources](/core/#api-resources).

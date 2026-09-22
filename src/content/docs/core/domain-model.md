@@ -25,4 +25,4 @@ Character roles such as field responder or supervisor are story details. They do
 
 The proposed workflow associates an incident with the agent handling it and records progress toward resolution. Assignment rules, status transitions, and any history or diagnostic notes remain design decisions.
 
-Core should enforce the agreed rules, while each client presents them in its own interface. See [data and reset](/core/data-and-reset/) for how the intended demo state relates to these concepts.
+Core should enforce the agreed rules, while each client presents them in its own interface. See the [Core overview](/core/#minimum-issue-flow) for the initial milestone and in-memory H2 data lifecycle.

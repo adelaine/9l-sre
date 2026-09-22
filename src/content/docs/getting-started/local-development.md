@@ -51,6 +51,6 @@ Documentation source lives in `9l-sre/src/content/docs/`. Each page has a title 
 | ClientJ   | Node.js version, package manager, API configuration, startup command, and checks.                            |
 | ClientL   | Node.js version, package manager, API configuration, startup command, and checks.                            |
 
-Record actual ports and environment variable names from the implementation. Include an example configuration with safe demo values, and explain how to restore the [seeded demo data](/core/data-and-reset/).
+Record actual ports and environment variable names from the implementation. Include an example configuration with safe demo values, and document the in-memory H2 startup and seeding behavior described in the [Core overview](/core/#minimum-issue-flow).
 
 Once the applications exist, verify Core first, then start either client against it. Document running both clients together only after their local configuration has been checked.

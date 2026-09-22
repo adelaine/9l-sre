@@ -42,4 +42,4 @@ On reopening, retain the resolution. It may subsequently be edited or cleared wh
 | Non-Admin attempts a move between closed statuses                                            | Reject in these examples.                                                               |
 | Admin selects any destination in the same workspace for an existing issue                    | Allow subject to the Resolution rule; selecting the current status leaves it unchanged. |
 
-These are documentation acceptance criteria, not implemented backend tests. Permission-storage fields and API implementation remain to be defined. See the [ERD](/core/api/datadiagram/) for entity relationships.
+These are documentation acceptance criteria, not implemented backend tests. Permission-storage fields and API implementation remain to be defined. See the [ERD](/core/datadiagram/) for entity relationships.

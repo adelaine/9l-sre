@@ -22,11 +22,14 @@ export default defineConfig({
                     items: [
                         "core",
                         "core/domain-model",
+                        "core/datadiagram",
                         {
                             label: "API",
                             items: [
-                                { label: "Overview", slug: "core/api" },
-                                "core/api/datadiagram",
+                                "core/api/auth",
+                                "core/api/workflow",
+                                "core/api/issues",
+                                "core/api/comments",
                             ],
                         },
                         {
@@ -54,7 +57,6 @@ export default defineConfig({
                                 "core/status/repair",
                             ],
                         },
-                        "core/data-and-reset",
                     ],
                 },
                 {

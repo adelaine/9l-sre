@@ -3,7 +3,7 @@ title: Tables overview
 description: The eleven entities in the issue-tracking schema.
 ---
 
-The [ERD](/core/api/datadiagram/) defines the agreed relationships. **★ Minimum** marks the tables needed for external sign-in, issue creation, and display. Field definitions cover this first milestone; physical database types remain to be defined.
+The [ERD](/core/datadiagram/) defines the agreed relationships. **★ Minimum** marks the tables needed for external sign-in, issue creation, and display. Field definitions cover this first milestone; physical database types remain to be defined.
 
 | Table                                       | Purpose                                                  | Initial population                | Minimum |
 | ------------------------------------------- | -------------------------------------------------------- | --------------------------------- | ------- |
@@ -19,4 +19,4 @@ The [ERD](/core/api/datadiagram/) defines the agreed relationships. **★ Minimu
 | [Interval](/core/tables/interval/)          | Workspace planning cycle.                                | Deferred                          |         |
 | [Attachment](/core/tables/attachment/)      | File attached to an issue.                               | Deferred                          |         |
 
-UserIdentity has the composite primary key **(user_id, provider_id)**. The other minimum tables use **id** as their primary key. New users and their identities are not seeded. The [initial API flow](/core/api/#minimum-issue-flow) records the outstanding workspace-role assignment decision.
+UserIdentity has the composite primary key **(user_id, provider_id)**. The other minimum tables use **id** as their primary key. New users and their identities are not seeded. The [initial API flow](/core/#minimum-issue-flow) records the outstanding workspace-role assignment decision.

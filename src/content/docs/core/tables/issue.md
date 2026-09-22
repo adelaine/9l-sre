@@ -23,7 +23,7 @@ Every new issue must start in **Reported**, regardless of the user’s role. No 
 | Field          | Rule                                                                                |
 | -------------- | ----------------------------------------------------------------------------------- |
 | `id`           | Server-generated primary key.                                                       |
-| `workspace_id` | Required reference to Workspace.id, from the request path.                          |
+| `workspace_id` | Required reference to Workspace.id, from `workspaceId` in the create request body.  |
 | `reporter_id`  | Required reference to User.id, from the authenticated session.                      |
 | `status_id`    | Required reference to Status.id in the same workspace; always Reported at creation. |
 | `title`        | Required issue title.                                                               |

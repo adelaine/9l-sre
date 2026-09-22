@@ -17,4 +17,4 @@ ClientJ should follow Core's identifiers, allowed status transitions, and valida
 
 ## Verification to add
 
-Once connected, verify that a submitted incident can be retrieved from Core, rejected updates receive useful feedback, and refreshes do not show stale results after a successful change. Add actual configuration and request examples alongside the [Core API reference](/core/api/).
+Once connected, verify that a submitted incident can be retrieved from Core, rejected updates receive useful feedback, and refreshes do not show stale results after a successful change. Add actual configuration and request examples alongside the [Core API resources](/core/#api-resources).

@@ -59,4 +59,4 @@ Standalone character bio from the YouTube series; not a playable agent in 9L-SRE
 
 ## Demo profile behaviour
 
-The demo is intended to store these fictional profiles and backstories. Resets should restore the original seeded profiles and incidents rather than remove the characters from the demo. See [Core: Data and reset](/core/data-and-reset/) for the intended behavior and open implementation decisions.
+These biographies provide fictional context; backstories are outside the issue-tracking schema. The initial demo’s in-memory H2 data lifecycle is described in the [Core overview](/core/#minimum-issue-flow).

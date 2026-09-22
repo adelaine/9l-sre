@@ -13,4 +13,4 @@ Moxie “Hotfix” Mallow is the selected first playable demo agent. She works u
 
 The [Agent Roster](/appendix/agent-roster/) introduces the wider cast, their backstories, and their relationships. These details give the demo its narrative context; they do not define API fields or application permissions.
 
-Technical behavior for restoring fictional profiles belongs in [Core: Data and reset](/core/data-and-reset/).
+The initial demo’s in-memory H2 data lifecycle is described in the [Core overview](/core/#minimum-issue-flow).
