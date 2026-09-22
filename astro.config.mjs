@@ -38,6 +38,12 @@ export default defineConfig({
                                 { autogenerate: { directory: "core/status" } },
                             ],
                         },
+                        {
+                            label: "Mock",
+                            items: [
+                                { autogenerate: { directory: "core/mock" } },
+                            ],
+                        },
                     ],
                 },
                 {

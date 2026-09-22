@@ -15,6 +15,7 @@ Both clients should interpret identifiers, status values, validation failures, a
 
 The API pages describe proposed contracts, not verified implemented endpoints. **★ Minimum** identifies endpoints for the first milestone.
 
+- [Mock](/core/api/mock/): proposed fixed issue reads under `/mock`, with [fixtures and test requirements](/core/mock/issues/).
 - [Auth](/core/api/auth/): external sign-in and sessions under `/auth`.
 - [Issues](/core/api/issues/): issue creation, retrieval, listing, and updates under `/issues`.
 - [Workflow](/core/api/workflow/): role-controlled status transitions under `/workflow`; deferred from the first milestone.
