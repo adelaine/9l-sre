@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import lucode from "lucode-starlight";
+import starlightThemeFlexoki from "starlight-theme-flexoki";
 
 export default defineConfig({
     site: "https://forge.ctrlcatworks.com",
@@ -8,7 +8,7 @@ export default defineConfig({
     integrations: [
         starlight({
             title: "9L-SRE",
-            plugins: [lucode()],
+            plugins: [starlightThemeFlexoki()],
             sidebar: [
                 { label: "Home", slug: "" },
                 {
