@@ -21,7 +21,8 @@
     },
     "dependencies": {
         "@astrojs/starlight": "^0.42.1",
-        "astro": "^7.3.2"
+        "astro": "^7.3.2",
+        "lucode-starlight": "^1.0.0"
     },
     "allowScripts": {
         "fsevents@2.3.3": true,
