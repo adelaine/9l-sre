@@ -18,7 +18,8 @@ This entity relationship diagram (ERD) defines the issue tracker’s relationshi
 - Each interval belongs to one workspace and can group multiple issues.
 - Each comment belongs to one issue and has one User as its author.
 - Each attachment belongs to one issue and has one User as its uploader.
-- Users and the fixed statuses are shared globally.
+- Users have shared identities across workspaces.
+- Each Status belongs to one Workspace; status codes are unique within that workspace. An issue can use only a status from its own workspace.
 - Each Role belongs to exactly one Workspace. A workspace defines its own roles.
 - UserRole connects exactly one User to exactly one Role. The workspace comes through the Role, with no direct Workspace–UserRole relationship.
 - A user joins a workspace through a role assignment and can have only one role per workspace. Users no longer have access to every workspace by default.
@@ -33,6 +34,7 @@ In the diagram, **1** means exactly one, **0..1** means optional and at most one
 erDiagram
     Workspace ||--o{ Issue : contains
     Workspace ||--o{ Interval : defines
+    Workspace ||--o{ Status : defines
     Interval o|--o{ Issue : groups
     Status ||--o{ Issue : classifies
     User ||--o{ Issue : reports

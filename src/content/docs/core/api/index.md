@@ -41,12 +41,16 @@ After successful external authentication and email verification, create the User
 
 1. Authenticate externally and establish a verified User and UserIdentity.
 2. Assign the new reporter a role in the seeded workspace.
-3. Create an issue with a title and optional description. The server supplies the ID, authenticated reporter, creation timestamp, and Reported status.
+3. Create an issue with a title and optional description and resolution. The server supplies the ID, authenticated reporter, creation timestamp, and its workspace’s Reported status. Omitted resolution is returned as null.
 4. Retrieve the issue by ID. Both creation and retrieval return the [issue display response](/core/api/schema/issue/#display-response).
 
 **Open decision:** how the new reporter receives a workspace role. Automatic assignment to a seeded Reporter role has been proposed but not agreed. UserRole cannot be seeded ahead of a newly created User; this decision must be resolved before the end-to-end flow can be implemented.
 
 The [Tables overview](/core/api/schema/) marks the minimum tables. Comments, attachments, intervals, assignment, and status-transition APIs are deferred from the first milestone.
+
+## Workflow examples
+
+[Incident Report and Haunted Machine Repair](/core/api/status-transitions/) use separate workspace-owned statuses and roles. Transitions remain unstructured for review, with Admin override and a nonblank Resolution required for any closed status. Transition APIs remain outside the first creation-and-display milestone.
 
 ## Contract documentation
 

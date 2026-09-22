@@ -9,6 +9,7 @@ Organizes issues and planning intervals.
 
 - A workspace has zero or more issues.
 - A workspace has zero or more intervals.
+- A workspace owns its Status records; its issues can only use those statuses. Each workspace seeds an unfinished Reported status.
 - A workspace defines zero or more Roles, each owned by that workspace.
 - Users join the workspace through UserRole assignments to its roles, with one role per user per workspace.
 

@@ -1,40 +1,39 @@
 ---
 title: Status
-description: Status purpose and relationships in the issue tracker.
+description: Workspace-owned issue statuses and their closure classification.
 ---
 
-Describes an issue’s current progress.
+Describes an issue’s current progress within its workspace.
 
 ## Relationships
 
-- A status can be used by zero or more issues.
-- Statuses are fixed globally and shared across workspaces.
+- Each Status belongs to exactly one Workspace and can classify zero or more issues.
+- An issue’s Status must belong to the same workspace as the issue.
+- Status codes are unique within a workspace, not globally.
 
-## Agreed statuses
+## Workspace examples
 
-| Status         | Meaning                                                        |
-| -------------- | -------------------------------------------------------------- |
-| Reported       | The issue has been submitted.                                  |
-| Investigating  | The cause or required response is being determined.            |
-| Processing     | Investigation is complete and the fix or response is underway. |
-| Stalled        | Progress is blocked or paused.                                 |
-| Completed      | The work is finished.                                          |
-| Not Applicable | The report does not require applicable work.                   |
+| Workspace              | Unfinished statuses                                                              | Closed statuses                   |
+| ---------------------- | -------------------------------------------------------------------------------- | --------------------------------- |
+| Incident Report        | Reported, Investigating, Processing, Stalled                                     | Completed, Not Applicable         |
+| Haunted Machine Repair | Reported, In Transit, Acquired — Storage, Acquired — With Technician, Processing | Completed, Failed, Not Applicable |
 
-## Initial status
+In repair, In Transit and Storage are optional. With Technician indicates physical custody before work starts; Processing means repair is underway. These examples remain unstructured for review.
 
-Reported is the only allowed initial status for a new issue. Role permissions cannot override this rule.
+## Initial status and transitions
 
-## Transitions
+Reported is the only allowed initial status in every workspace, including for Admin. Each workspace must seed its Reported status as unfinished.
 
-The [status-transition diagram](/core/api/status-transitions/) defines all possible moves. Each requires explicit permission from the user’s role in the issue’s workspace. Forward skips, backward moves, entering or leaving Stalled, and reopening Completed or Not Applicable issues all require permission for the exact transition.
+The [workflow diagrams](/core/api/status-transitions/) define possible role-permitted moves and the Admin override. Closed issues may reopen. Any closed destination requires a nonblank Issue resolution, including Admin moves between closed statuses. A closed issue’s resolution cannot be cleared.
 
 ## Minimum fields
 
-| Field  | Rule                                |
-| ------ | ----------------------------------- |
-| `id`   | Primary key.                        |
-| `code` | Required unique stable status code. |
-| `name` | Status display name.                |
+| Field          | Rule                                                                            |
+| -------------- | ------------------------------------------------------------------------------- |
+| `id`           | Primary key.                                                                    |
+| `workspace_id` | Required reference to Workspace.id.                                             |
+| `code`         | Required stable code; (workspace_id, code) is unique.                           |
+| `name`         | Status display name.                                                            |
+| `is_closed`    | Required boolean indicating whether this status requires a nonblank resolution. |
 
-Physical database types remain to be defined.
+Seed `is_closed` according to the workspace examples above. Physical database types remain to be defined.

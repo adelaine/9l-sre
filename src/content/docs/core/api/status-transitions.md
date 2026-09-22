@@ -1,44 +1,51 @@
 ---
 title: Status transitions
-description: Role-controlled status changes, including stalled work, backward moves, and reopening.
+description: Workspace-specific workflow examples with role permissions, Admin override, and required resolution on closure.
 ---
 
-Each workspace’s roles specify which individual status transitions they permit. A user joins a workspace through a UserRole assignment to one of its roles, with one role per user per workspace.
+These examples are deliberately unstructured for review. Each workspace owns its statuses and roles. Specific permissions for Reporter, Agent, Support, Supervisor, and Technician remain to be defined; an arrow shows a possible move, not a grant to every role.
 
-![Status-transition diagram starting only at Reported and grouping Reported, Investigating, Processing, and Stalled as unfinished statuses, with role-controlled moves in either direction and reopening from Completed or Not Applicable.](/diagrams/status-transitions.svg)
+## Shared rules
+
+- Every new issue starts in its workspace’s **Reported** status, including issues created by Admin. Creation is not a configurable transition.
+- A role-permitted move may go between any unfinished statuses or from unfinished to closed. Each direction requires its own permission from the user’s role in the issue’s workspace.
+- Closed issues may reopen into any unfinished status.
+- **Admin may set an existing issue to any status in the same workspace**, including another closed status. Admin cannot bypass the initial-status rule, workspace boundary, or Resolution requirement.
+- In repair, **In Transit and Acquired — Storage are skippable**. The examples do not enforce a sequence; structured flows will be refined after review.
+
+## Resolution on closure
+
+`resolution` is optional plain text while an issue is unfinished. Any move into a closed status requires a resolution containing non-whitespace text, including Admin overrides and moves between closed statuses.
+
+A transition may supply the resolution and destination status together. Validate the resulting issue and save both atomically: if closure is rejected, neither field changes. An existing nonblank resolution satisfies the requirement. A closed issue cannot have its resolution cleared.
+
+On reopening, retain the resolution. It may subsequently be edited or cleared while the issue is unfinished. An initial issue response includes `resolution: null` when none was supplied. See [Issue](/core/api/schema/issue/) for its fields and display response.
+
+## Incident Report
+
+**Roles:** Reporter, Agent, Support, Supervisor, Admin.
+
+![Incident Report workflow: creation starts at Reported; unfinished statuses allow role-permitted moves, closed statuses require resolution, and Admin can override within the workspace.](/diagrams/status-transitions.svg)
 
 [Open the full-size diagram](/diagrams/status-transitions.svg).
 
-**Every status-to-status direction requires explicit permission from the user’s role in the issue’s workspace.** Permission for one transition does not imply permission for its reverse or any other transition. A role in another workspace grants no permission here.
+| Category   | Statuses                                     |
+| ---------- | -------------------------------------------- |
+| Unfinished | Reported, Investigating, Processing, Stalled |
+| Closed     | Completed, Not Applicable                    |
 
-## Initial status
+### Mermaid source
 
-Every new issue starts in **Reported**. No role can create an issue in another status. The entry arrow represents creation, not a configurable status transition. Role-controlled transitions apply only after creation; reopening changes an existing issue and follows the transition rules below.
-
-## Allowed directions
-
-| From           | Possible destinations, subject to role permission              |
-| -------------- | -------------------------------------------------------------- |
-| Reported       | Investigating, Processing, Stalled, Completed, Not Applicable  |
-| Investigating  | Reported, Processing, Stalled, Completed, Not Applicable       |
-| Processing     | Reported, Investigating, Stalled, Completed, Not Applicable    |
-| Stalled        | Reported, Investigating, Processing, Completed, Not Applicable |
-| Completed      | Reported, Investigating, Processing, Stalled                   |
-| Not Applicable | Reported, Investigating, Processing, Stalled                   |
-
-Reported, Investigating, Processing, and Stalled are unfinished statuses. An unfinished issue may move to any other unfinished status, Completed, or Not Applicable when its role permits that exact transition. This includes forward skips and backward moves.
-
-Stalled means progress is blocked or paused. Any unfinished issue can become Stalled, and a Stalled issue may move to any other status when permitted; it does not have to return to its previous status.
-
-Completed and Not Applicable are closed outcomes, but they are not terminal: either can reopen into any unfinished status, including Stalled, with explicit role permission. There is no direct transition between Completed and Not Applicable.
-
-The diagram’s grouped arrows apply to every unfinished status. Each two-headed arrow represents two separately controlled directions. The table and Mermaid source enumerate all 28 possible status-to-status transitions, plus the creation entry into Reported; a role may permit only a subset.
-
-## Mermaid source
+The source lists each directed move. Unlabelled moves require role permission; moves between closed statuses are labelled Admin override. All moves into closed statuses require nonblank resolution.
 
 ```mermaid
 stateDiagram-v2
     direction LR
+    state "Reported" as Reported
+    state "Investigating" as Investigating
+    state "Processing" as Processing
+    state "Stalled" as Stalled
+    state "Completed" as Completed
     state "Not Applicable" as NotApplicable
     [*] --> Reported
     Reported --> Investigating
@@ -65,12 +72,117 @@ stateDiagram-v2
     Completed --> Investigating
     Completed --> Processing
     Completed --> Stalled
+    Completed --> NotApplicable: Admin override
     NotApplicable --> Reported
     NotApplicable --> Investigating
     NotApplicable --> Processing
     NotApplicable --> Stalled
+    NotApplicable --> Completed: Admin override
 ```
 
-## Boundaries
+## Haunted Machine Repair
 
-Role names, permission-storage fields, and API implementation remain to be defined. This diagram describes workflow rules; entity relationships are documented in the [ERD](/core/api/datadiagram/). See [Role](/core/api/schema/role/) and [Status](/core/api/schema/status/) for their entity descriptions.
+**Roles:** Reporter, Technician, Admin.
+
+![Haunted Machine Repair workflow: creation starts at Reported; unfinished statuses allow role-permitted moves, closed statuses require resolution, and Admin can override within the workspace.](/diagrams/repair-status-transitions.svg)
+
+[Open the full-size diagram](/diagrams/repair-status-transitions.svg).
+
+| Category   | Statuses                                                                         |
+| ---------- | -------------------------------------------------------------------------------- |
+| Unfinished | Reported, In Transit, Acquired — Storage, Acquired — With Technician, Processing |
+| Closed     | Completed, Failed, Not Applicable                                                |
+
+**Acquired — Storage** means the machine has been received and is waiting in storage. **Acquired — With Technician** means the technician has physical custody but repair has not started. **Processing** means repair is underway. **Failed** means the repair attempt ended unsuccessfully.
+
+### Mermaid source
+
+The source lists each directed move. Unlabelled moves require role permission; moves between closed statuses are labelled Admin override. All moves into closed statuses require nonblank resolution.
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    state "Reported" as Reported
+    state "In Transit" as InTransit
+    state "Acquired — Storage" as AcquiredStorage
+    state "Acquired — With Technician" as AcquiredWithTechnician
+    state "Processing" as Processing
+    state "Completed" as Completed
+    state "Failed" as Failed
+    state "Not Applicable" as NotApplicable
+    [*] --> Reported
+    Reported --> InTransit
+    Reported --> AcquiredStorage
+    Reported --> AcquiredWithTechnician
+    Reported --> Processing
+    Reported --> Completed
+    Reported --> Failed
+    Reported --> NotApplicable
+    InTransit --> Reported
+    InTransit --> AcquiredStorage
+    InTransit --> AcquiredWithTechnician
+    InTransit --> Processing
+    InTransit --> Completed
+    InTransit --> Failed
+    InTransit --> NotApplicable
+    AcquiredStorage --> Reported
+    AcquiredStorage --> InTransit
+    AcquiredStorage --> AcquiredWithTechnician
+    AcquiredStorage --> Processing
+    AcquiredStorage --> Completed
+    AcquiredStorage --> Failed
+    AcquiredStorage --> NotApplicable
+    AcquiredWithTechnician --> Reported
+    AcquiredWithTechnician --> InTransit
+    AcquiredWithTechnician --> AcquiredStorage
+    AcquiredWithTechnician --> Processing
+    AcquiredWithTechnician --> Completed
+    AcquiredWithTechnician --> Failed
+    AcquiredWithTechnician --> NotApplicable
+    Processing --> Reported
+    Processing --> InTransit
+    Processing --> AcquiredStorage
+    Processing --> AcquiredWithTechnician
+    Processing --> Completed
+    Processing --> Failed
+    Processing --> NotApplicable
+    Completed --> Reported
+    Completed --> InTransit
+    Completed --> AcquiredStorage
+    Completed --> AcquiredWithTechnician
+    Completed --> Processing
+    Completed --> Failed: Admin override
+    Completed --> NotApplicable: Admin override
+    Failed --> Reported
+    Failed --> InTransit
+    Failed --> AcquiredStorage
+    Failed --> AcquiredWithTechnician
+    Failed --> Processing
+    Failed --> Completed: Admin override
+    Failed --> NotApplicable: Admin override
+    NotApplicable --> Reported
+    NotApplicable --> InTransit
+    NotApplicable --> AcquiredStorage
+    NotApplicable --> AcquiredWithTechnician
+    NotApplicable --> Processing
+    NotApplicable --> Completed: Admin override
+    NotApplicable --> Failed: Admin override
+```
+
+## Acceptance criteria
+
+| Scenario                                                                                     | Expected behavior                                                                       |
+| -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Create an issue, including as Admin                                                          | Status is Reported in the issue’s workspace; omitted resolution is null.                |
+| Select a status from another workspace                                                       | Reject, including for Admin.                                                            |
+| Close with missing, empty, or whitespace-only resolution and no existing nonblank resolution | Reject; neither status nor resolution changes.                                          |
+| Close with a supplied nonblank resolution                                                    | Save destination status and resolution together.                                        |
+| Close with an existing nonblank resolution                                                   | Accept if the role permits the move.                                                    |
+| Admin moves into or between closed statuses                                                  | Require nonblank resolution; the override does not waive validation.                    |
+| Clear resolution while the issue remains closed                                              | Reject, including for Admin.                                                            |
+| Reopen a closed issue                                                                        | Retain resolution; permit a later edit or clear while unfinished.                       |
+| Skip In Transit or Storage during repair                                                     | Allow when the role permits the exact move.                                             |
+| Non-Admin attempts a move between closed statuses                                            | Reject in these examples.                                                               |
+| Admin selects any destination in the same workspace for an existing issue                    | Allow subject to the Resolution rule; selecting the current status leaves it unchanged. |
+
+These are documentation acceptance criteria, not implemented backend tests. Permission-storage fields, individual non-Admin role permissions, and API implementation remain to be defined. See the [ERD](/core/api/datadiagram/) for entity relationships.

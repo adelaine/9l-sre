@@ -1,10 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-labelledby="title description">
 <title id="title">Issue tracker entity relationship diagram</title>
-<desc id="description">Eleven entities. UserIdentity links User and Provider with composite primary key user_id and provider_id. Each Role belongs to one Workspace. Each UserRole connects one User and one Role, with at most one role per user per workspace. Each issue has one workspace, status and reporter, and optionally one interval and assignee. Each interval has one workspace. Comments and attachments each have one issue and one user. All relationships allow zero or more records on the child side.</desc>
+<desc id="description">Eleven entities. Each Status belongs to one Workspace; an issue uses only statuses from its own workspace. UserIdentity links User and Provider with composite primary key user_id and provider_id. Each Role belongs to one Workspace. Each UserRole connects one User and one Role, with at most one role per user per workspace. Each issue has one workspace, status and reporter, and optionally one interval and assignee. Each interval has one workspace. Comments and attachments each have one issue and one user. All relationships allow zero or more records on the child side.</desc>
 <style>text{font-family:system-ui,sans-serif;fill:#172b4d} .edge{fill:none;stroke:#526581;stroke-width:2} .label{font-size:16px;paint-order:stroke;stroke:#f8fafc;stroke-width:8;stroke-linejoin:round} .count{font-size:14px;font-weight:700;paint-order:stroke;stroke:#f8fafc;stroke-width:6} .entity{fill:#fff;stroke:#64748b;stroke-width:2} .name{font-size:22px;font-weight:650;text-anchor:middle}</style>
 <rect width="1200" height="1500" fill="#f8fafc"/>
 <text x="48" y="46" font-size="26" font-weight="700">Issue tracker · Entity relationships</text>
 
+<path class="edge" d="M 250 100 V70 H1000 V100"/>
+<text x="276" y="91" class="count">1</text>
+<text x="1023" y="91" class="count">0..*</text>
+<text x="770" y="63" class="label" text-anchor="middle">defines statuses</text>
 <path class="edge" d="M 300 140 H 500"/>
 <text x="400" y="123" class="label" text-anchor="middle">defines</text>
 <text x="325" y="161" class="count" text-anchor="middle">1</text>

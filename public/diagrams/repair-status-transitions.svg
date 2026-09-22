@@ -1,21 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1060" viewBox="0 0 1200 1060" role="img" aria-labelledby="title description">
-<title id="title">Incident Report workflow</title><desc id="description">Unstructured workflow. New issues start only at Reported. Unfinished: Reported, Investigating, Processing, Stalled. Closed: Completed, Not Applicable. Role-permitted moves connect unfinished statuses and allow closure and reopening. Admin may set any existing issue status in its workspace. Every closed destination requires nonblank resolution.</desc>
+<title id="title">Haunted Machine Repair workflow</title><desc id="description">Unstructured workflow. New issues start only at Reported. Unfinished: Reported, In Transit, Acquired — Storage, Acquired — With Technician, Processing. Closed: Completed, Failed, Not Applicable. Role-permitted moves connect unfinished statuses and allow closure and reopening. Admin may set any existing issue status in its workspace. Every closed destination requires nonblank resolution.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#526581"/></marker></defs>
 <style>text{font-family:system-ui,sans-serif;fill:#172b4d}.name{font-size:22px;font-weight:650;text-anchor:middle}.note{font-size:18px;text-anchor:middle}.edge{fill:none;stroke:#526581;stroke-width:2.5;marker-start:url(#arrow);marker-end:url(#arrow)}.state{fill:#fff;stroke:#64748b;stroke-width:2}</style>
 <rect width="1200" height="1060" fill="#f8fafc"/>
-<text x="48" y="48" font-size="28" font-weight="700">Incident Report</text>
-<text x="48" y="84" font-size="18">Roles: Reporter, Agent, Support, Supervisor, Admin</text>
+<text x="48" y="48" font-size="28" font-weight="700">Haunted Machine Repair</text>
+<text x="48" y="84" font-size="18">Roles: Reporter, Technician, Admin</text>
 <rect x="80" y="125" width="1040" height="425" rx="16" fill="#edf2f8" stroke="#64748b" stroke-dasharray="7 5"/>
 <text x="600" y="165" class="name">Unfinished statuses · role-permitted moves between any pair</text>
 <circle cx="118" cy="253" r="8" fill="#172b4d"/><path d="M126 253 H190" stroke="#526581" stroke-width="2.5" marker-end="url(#arrow)"/>
 <text x="95" y="220" font-size="15">New issue</text>
 <rect class="state" x="190" y="215" width="340" height="76" rx="10"/><text x="360.0" y="260" class="name">Reported</text>
-<rect class="state" x="640" y="215" width="340" height="76" rx="10"/><text x="810.0" y="260" class="name">Investigating</text>
-<rect class="state" x="190" y="340" width="340" height="76" rx="10"/><text x="360.0" y="385" class="name">Processing</text>
-<rect class="state" x="640" y="340" width="340" height="76" rx="10"/><text x="810.0" y="385" class="name">Stalled</text>
-<text x="600" y="492" class="note">Forward skips and backward moves require permission for the exact direction.</text>
-<path class="edge" d="M340 550 V730"/><rect x="200" y="730" width="280" height="80" rx="10" fill="#e8f2ed" stroke="#3f7460" stroke-width="2"/><text x="340" y="779" class="name">Completed</text>
-<path class="edge" d="M860 550 V730"/><rect x="720" y="730" width="280" height="80" rx="10" fill="#e8f2ed" stroke="#3f7460" stroke-width="2"/><text x="860" y="779" class="name">Not Applicable</text>
+<rect class="state" x="640" y="215" width="340" height="76" rx="10"/><text x="810.0" y="260" class="name">In Transit</text>
+<rect class="state" x="110" y="340" width="290" height="76" rx="10"/><text x="255.0" y="385" class="name">Acquired — Storage</text>
+<rect class="state" x="425" y="340" width="385" height="76" rx="10"/><text x="617.5" y="385" class="name">Acquired — With Technician</text>
+<rect class="state" x="835" y="340" width="260" height="76" rx="10"/><text x="965.0" y="385" class="name">Processing</text>
+<text x="600" y="492" class="note">In Transit and Storage are optional; all unfinished stages may be skipped when permitted.</text>
+<path class="edge" d="M250 550 V730"/><rect x="110" y="730" width="280" height="80" rx="10" fill="#e8f2ed" stroke="#3f7460" stroke-width="2"/><text x="250" y="779" class="name">Completed</text>
+<path class="edge" d="M600 550 V730"/><rect x="460" y="730" width="280" height="80" rx="10" fill="#e8f2ed" stroke="#3f7460" stroke-width="2"/><text x="600" y="779" class="name">Failed</text>
+<path class="edge" d="M950 550 V730"/><rect x="810" y="730" width="280" height="80" rx="10" fill="#e8f2ed" stroke="#3f7460" stroke-width="2"/><text x="950" y="779" class="name">Not Applicable</text>
 <rect x="340" y="608" width="520" height="76" rx="8" fill="#f8fafc"/><text x="600" y="636" class="note">↓ Close with nonblank Resolution</text><text x="600" y="667" class="note">↑ Reopen into any unfinished status; retain Resolution</text>
 <text x="600" y="860" class="note">Grouped arrows apply to every unfinished status. Each direction is permission-controlled.</text>
 <rect x="80" y="900" width="1040" height="115" rx="12" fill="#fff4dc" stroke="#ad8542"/>
