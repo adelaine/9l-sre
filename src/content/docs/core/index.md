@@ -37,6 +37,8 @@ For each implemented operation, document its HTTP method and path, required iden
 
 ## Read next
 
+- [Infrastructure](/core/infrastructure/): runtime and development containers, Podman, and H2 storage.
+
 - [Entity relationship diagram](/core/datadiagram/): the agreed issue-tracking model.
 - [Tables](/core/tables/): entity descriptions and fields.
 - [Status](/core/status/): shared rules and role-specific incident and repair workflows.

@@ -19,6 +19,7 @@ export default defineConfig({
                         "core",
                         "core/domain-model",
                         "core/datadiagram",
+                        "core/infrastructure",
                         {
                             label: "API",
                             items: [

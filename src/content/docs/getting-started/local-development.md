@@ -3,7 +3,7 @@ title: Local development
 description: Run the documentation site locally and understand the application setup status.
 ---
 
-The documentation site runs with Astro Starlight. Core, ClientJ, and ClientL are still planned applications; their startup instructions will be added with their implementations.
+The documentation site runs with Astro Starlight. Core’s runtime and development-container instructions are documented in [Infrastructure](/core/infrastructure/). Client startup instructions will be added with their implementations.
 
 ## Run the documentation site
 
@@ -41,7 +41,7 @@ Repos/
 └── 9l-sre-clientl/  # Planned React client
 ```
 
-Documentation source lives in `9l-sre/src/content/docs/`. Each page has a title and description in YAML frontmatter. The content collection is configured in `src/content.config.ts`, and sidebar section labels and order are defined in `astro.config.mjs`. Pages within each configured directory are added automatically; overview pages use optional `sidebar.order` frontmatter to appear first. Other pages omit it and sort alphabetically by file ID after the overview. Core’s overview, domain model, and ERD remain explicit links above its generated API, Tables, and Status groups. Use site routes such as `/core/` when linking between pages.
+Documentation source lives in `9l-sre/src/content/docs/`. Each page has a title and description in YAML frontmatter. The content collection is configured in `src/content.config.ts`, and sidebar section labels and order are defined in `astro.config.mjs`. Pages within each configured directory are added automatically; overview pages use optional `sidebar.order` frontmatter to appear first. Other pages omit it and sort alphabetically by file ID after the overview. Core’s overview, Infrastructure, domain model, and ERD remain explicit links above its generated API, Tables, and Status groups. Use site routes such as `/core/` when linking between pages.
 
 ## Setup information to add with the code
 
