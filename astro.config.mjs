@@ -22,7 +22,29 @@ export default defineConfig({
                     items: [
                         "core",
                         "core/domain-model",
-                        "core/api",
+                        {
+                            label: "API",
+                            items: [
+                                { label: "Overview", slug: "core/api" },
+                                "core/api/datadiagram",
+                                "core/api/status-transitions",
+                                {
+                                    label: "Tables",
+                                    items: [
+                                        "core/api/schema",
+                                        "core/api/schema/workspace",
+                                        "core/api/schema/issue",
+                                        "core/api/schema/comment",
+                                        "core/api/schema/status",
+                                        "core/api/schema/interval",
+                                        "core/api/schema/user",
+                                        "core/api/schema/role",
+                                        "core/api/schema/user-role",
+                                        "core/api/schema/attachment",
+                                    ],
+                                },
+                            ],
+                        },
                         "core/data-and-reset",
                     ],
                 },

@@ -5,6 +5,12 @@ description: Intended API responsibilities and the contract details that remain 
 
 Core is intended to expose an application programming interface (API) that both clients use. No endpoints or request schemas have been implemented yet, so this page is not an executable API reference.
 
+## Issue tracker model
+
+- [Entity relationship diagram](/core/api/datadiagram/): the agreed entities and relationships.
+- [Status transitions](/core/api/status-transitions/): status changes and reopening permitted by workspace roles.
+- [Tables](/core/api/schema/): each entity’s purpose and relationships.
+
 ## Intended capabilities
 
 The shared contract should cover submitting incidents, retrieving incident information, tracking investigation progress, and retrieving demo agent profiles. Restoration of demo data also needs a defined mechanism, though its availability and access rules are still undecided.

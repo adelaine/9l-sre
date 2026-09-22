@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" role="img" aria-labelledby="title description">
+<title id="title">Role-controlled status transitions</title>
+<desc id="description">Every new issue starts only in Reported, regardless of role. Reported, Investigating, Processing, and Stalled are unfinished statuses. Each can move to any other status when permitted. Completed and Not Applicable can each reopen into any unfinished status. All 28 directed transitions require separate role permission. No direct transition connects the two closed outcomes.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526581"/></marker></defs>
+<style>text{font-family:system-ui,sans-serif;fill:#172b4d}.edge{fill:none;stroke:#526581;stroke-width:2.5;marker-start:url(#arrow);marker-end:url(#arrow)}.state{fill:#fff;stroke:#64748b;stroke-width:2}.closed{fill:#e8f2ed;stroke:#3f7460;stroke-width:2}.name{font-size:23px;font-weight:650;text-anchor:middle}.note{font-size:18px;text-anchor:middle}.label{font-size:18px;paint-order:stroke;stroke:#f8fafc;stroke-width:8;stroke-linejoin:round}</style>
+<rect width="1200" height="1000" fill="#f8fafc"/>
+<text x="48" y="48" font-size="27" font-weight="700">Role-controlled status transitions</text>
+<text x="48" y="83" font-size="18">Each status-to-status direction requires its own permission from the user’s role in the issue’s workspace.</text>
+<rect x="100" y="125" width="1000" height="460" rx="18" fill="#edf2f8" stroke="#64748b" stroke-dasharray="7 5"/>
+<text x="600" y="165" class="name">Unfinished statuses</text>
+<circle cx="140" cy="265" r="9" fill="#172b4d"/>
+<path d="M 149 265 H 220" fill="none" stroke="#526581" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="120" y="209" font-size="16">New issue</text>
+<text x="120" y="322" font-size="15">Reported only</text>
+<path class="edge" d="M 460 265 H 740"/>
+<path class="edge" d="M 340 305 V 405"/>
+<path class="edge" d="M 860 305 V 405"/>
+<path class="edge" d="M 460 445 H 740"/>
+<path class="edge" d="M 460 295 L 740 415"/>
+<path class="edge" d="M 460 415 L 740 295"/>
+<rect class="state" x="220" y="225" width="240" height="80" rx="12"/>
+<text class="name" x="340" y="273">Reported</text>
+<rect class="state" x="740" y="225" width="240" height="80" rx="12"/>
+<text class="name" x="860" y="273">Investigating</text>
+<rect class="state" x="220" y="405" width="240" height="80" rx="12"/>
+<text class="name" x="340" y="453">Stalled</text>
+<rect class="state" x="740" y="405" width="240" height="80" rx="12"/>
+<text class="name" x="860" y="453">Processing</text>
+<text class="note" x="600" y="540">Any unfinished status can move to any other unfinished status.</text>
+<path class="edge" d="M 340 585 V 785"/>
+<path class="edge" d="M 860 585 V 785"/>
+<text class="label" x="365" y="658">↓ Complete</text>
+<text class="label" x="365" y="714">↑ Reopen</text>
+<text class="label" x="885" y="658">↓ Not applicable</text>
+<text class="label" x="885" y="714">↑ Reopen</text>
+<rect class="closed" x="200" y="785" width="280" height="80" rx="12"/>
+<text class="name" x="340" y="833">Completed</text>
+<rect class="closed" x="720" y="785" width="280" height="80" rx="12"/>
+<text class="name" x="860" y="833">Not Applicable</text>
+<text class="note" x="600" y="914">Grouped arrows apply to every unfinished status, including Stalled.</text>
+<text class="note" x="600" y="950">Closed outcomes can reopen. No direct move connects Completed and Not Applicable.</text>
+</svg>

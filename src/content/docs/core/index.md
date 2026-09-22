@@ -1,22 +1,19 @@
 ---
 title: Core overview
-description: The planned shared Java and Spring Boot backend for 9L-SRE.
+description: The shared Java and Spring Boot API service for 9L-SRE.
 ---
 
-Core is the planned Java and Spring Boot backend for 9L-SRE. Its repository is `9l-sre-core`. Both ClientJ and ClientL are intended to use it for the same incident and agent data.
+Core is the shared Java and Spring Boot application programming interface (API) service for 9L-SRE. Both ClientJ and ClientL use the same service for issue tracking. Its repository is `9l-sre-core`.
 
 ## Responsibilities
 
-Core should accept incident reports, provide incident details, validate updates, and store the results of investigations. It should also provide the fictional agent profiles used in the demo and support restoration of the seeded demo state.
+Core owns issue-tracking data and shared business rules: workspaces, issues, comments, statuses, planning intervals, users, attachments, and workspace-specific role assignments. A User represents the agent’s account and profile in the issue tracker; character backstory is outside this model.
 
-Business rules belong here so that changing clients does not change what an incident update means. For example, once status transitions are defined, both clients should receive the same acceptance or rejection for the same attempted transition.
+Both clients should apply the same rules and interpret the same data consistently. The agreed relationships are documented before table fields and API contracts are defined.
 
 ## Read next
 
-- [Domain model](/core/domain-model/): the concepts behind incidents and agents.
-- [API](/core/api/): the planned contract and the information still needed.
-- [Data and reset](/core/data-and-reset/): seeded profiles and expected restoration behavior.
-
-## Implementation status
-
-The repository is currently empty. Java and Spring Boot are the selected direction; versions, dependencies, database, authentication, API endpoints, and deployment remain unspecified.
+- [API overview](/core/api/): intended capabilities and contract documentation.
+- [Entity relationship diagram](/core/api/datadiagram/): the agreed issue-tracking model.
+- [Tables](/core/api/schema/): entity descriptions and relationships.
+- [Data and reset](/core/data-and-reset/): demo restoration planning.
