@@ -1,16 +1,18 @@
 ---
 title: Entity relationship diagram
-description: The agreed relationships between the nine issue-tracking entities.
+description: The agreed relationships between the eleven issue-tracking entities.
 ---
 
-This entity relationship diagram (ERD) defines the issue tracker’s relationships. Table fields and database implementation details remain to be defined.
+This entity relationship diagram (ERD) defines the issue tracker’s relationships. Minimum fields are documented in the table pages; physical database implementation details remain to be defined.
 
-![Issue tracker ERD showing Workspace, Interval, Status, Issue, User, Comment, Attachment, Role, and UserRole with relationship cardinalities.](/diagrams/issue-tracker-erd.svg)
+![Issue tracker ERD showing Workspace, Interval, Status, Issue, User, Comment, Attachment, Role, UserRole, Provider, and UserIdentity with relationship cardinalities.](/diagrams/issue-tracker-erd.svg)
 
 [Open the full-size diagram](/diagrams/issue-tracker-erd.svg).
 
 ## Relationships
 
+- UserIdentity links one User to one Provider, with composite primary key (user_id, provider_id). Each user has at most one identity per provider.
+- provider_id and provider_subject are unique together; an external account cannot belong to multiple users. User email is required, unique, and verified.
 - Each issue belongs to one workspace and has one status and one reporter.
 - Each issue may have one assignee and one planning interval. Its interval must belong to the same workspace.
 - Each interval belongs to one workspace and can group multiple issues.
@@ -42,6 +44,8 @@ erDiagram
     Workspace ||--o{ Role : defines
     User ||--o{ UserRole : participates
     Role ||--o{ UserRole : assigns
+    User ||--o{ UserIdentity : has
+    Provider ||--o{ UserIdentity : authenticates
 ```
 
 See [Tables](/core/api/schema/) for each entity’s purpose and relationships.

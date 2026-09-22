@@ -38,6 +38,8 @@ export default defineConfig({
                                         "core/api/schema/status",
                                         "core/api/schema/interval",
                                         "core/api/schema/user",
+                                        "core/api/schema/provider",
+                                        "core/api/schema/user-identity",
                                         "core/api/schema/role",
                                         "core/api/schema/user-role",
                                         "core/api/schema/attachment",

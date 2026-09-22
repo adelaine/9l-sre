@@ -13,6 +13,14 @@ Represents the agent’s login account and profile within the issue tracker. Cha
 - A User has zero or more UserRole assignments, with at most one role per workspace.
 - Status-transition permissions come from the user’s role in the issue’s workspace.
 
-## Fields
+## Minimum fields
 
-Fields and database constraints remain to be defined.
+| Field          | Rule                                                               |
+| -------------- | ------------------------------------------------------------------ |
+| `id`           | Primary key; used by issue and role references.                    |
+| `email`        | Required, unique, and verified through the external identity flow. |
+| `display_name` | Required reporter display name.                                    |
+
+Physical database types remain to be defined.
+
+There are no password fields. A User has zero or more [UserIdentity](/core/api/schema/user-identity/) records, with one identity per provider. New reporter accounts are created after successful external sign-in and verified email ownership.

@@ -12,6 +12,14 @@ Connects a User to a Role. The Role determines the workspace; UserRole has no di
 - A user can have only one role per workspace, but different roles in different workspaces.
 - A role from another workspace grants no permission to move an issue’s status in this workspace.
 
-## Fields
+## Minimum fields
 
-Fields and enforcement details remain to be defined. The one-role-per-user-per-workspace rule must account for the workspace reached through Role; uniqueness of the user–role pair alone is insufficient.
+| Field     | Rule                                                     |
+| --------- | -------------------------------------------------------- |
+| `id`      | Primary key.                                             |
+| `user_id` | Required reference to User.id.                           |
+| `role_id` | Required reference to Role.id; determines the workspace. |
+
+Physical database types remain to be defined.
+
+Enforce one role per user per workspace through the referenced Role. Uniqueness of the user–role pair alone is insufficient. The initial role-assignment flow for new reporters remains an open decision.

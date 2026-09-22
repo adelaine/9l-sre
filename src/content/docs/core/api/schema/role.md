@@ -15,6 +15,14 @@ Defines a role owned by one workspace. Users join that workspace through assignm
 
 Each role specifies the individual [status transitions](/core/api/status-transitions/) it permits within its workspace. Permission for one transition does not imply permission for its reverse or any other transition. Forward skips, backward moves, entering or leaving Stalled, and reopening each require explicit permission.
 
-## Fields
+## Minimum fields
 
-Role names, permission-storage fields, and API implementation remain to be defined.
+| Field          | Rule                                                                    |
+| -------------- | ----------------------------------------------------------------------- |
+| `id`           | Primary key.                                                            |
+| `workspace_id` | Required reference to Workspace.id; each role belongs to one workspace. |
+| `name`         | Role display name.                                                      |
+
+Physical database types remain to be defined.
+
+Role names, permission-storage fields, and API implementation remain to be defined. Roles are seeded for the first milestone.

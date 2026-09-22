@@ -1,18 +1,22 @@
 ---
 title: Tables overview
-description: The nine entities in the issue-tracking schema.
+description: The eleven entities in the issue-tracking schema.
 ---
 
-The [ERD](/core/api/datadiagram/) defines the agreed relationships. These pages describe each entity; table fields and database constraints remain to be defined.
+The [ERD](/core/api/datadiagram/) defines the agreed relationships. **★ Minimum** marks the tables needed for external sign-in, issue creation, and display. Field definitions cover this first milestone; physical database types remain to be defined.
 
-| Table                                      | Purpose                                                                                                               |
-| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| [Workspace](/core/api/schema/workspace/)   | Organizes issues and planning intervals.                                                                              |
-| [Issue](/core/api/schema/issue/)           | Represents a report and the work needed to handle it.                                                                 |
-| [Comment](/core/api/schema/comment/)       | Records a user’s discussion or update on an issue.                                                                    |
-| [Status](/core/api/schema/status/)         | Describes an issue’s current progress.                                                                                |
-| [Interval](/core/api/schema/interval/)     | Represents a planning cycle that groups issues within a workspace.                                                    |
-| [User](/core/api/schema/user/)             | Represents the agent’s login account and profile within the issue tracker. Character backstory is outside this model. |
-| [Attachment](/core/api/schema/attachment/) | Represents a file attached to an issue.                                                                               |
-| [Role](/core/api/schema/role/)             | Defines a workspace-owned role and its permitted status transitions.                                                  |
-| [UserRole](/core/api/schema/user-role/)    | Connects a user to a workspace through one of its roles.                                                              |
+| Table                                           | Purpose                                               | Initial population                | Minimum |
+| ----------------------------------------------- | ----------------------------------------------------- | --------------------------------- | ------- |
+| [Workspace](/core/api/schema/workspace/)        | Groups issues and owns roles.                         | Seeded                            | ★       |
+| [User](/core/api/schema/user/)                  | Account with required, unique, verified email.        | First verified sign-in            | ★       |
+| [Provider](/core/api/schema/provider/)          | External sign-in provider catalogue.                  | Seeded                            | ★       |
+| [UserIdentity](/core/api/schema/user-identity/) | Links User and Provider with a composite primary key. | Verified sign-in                  | ★       |
+| [Role](/core/api/schema/role/)                  | Workspace-owned role.                                 | Seeded                            | ★       |
+| [UserRole](/core/api/schema/user-role/)         | Assigns a user to a workspace through Role.           | Assignment after account creation | ★       |
+| [Status](/core/api/schema/status/)              | Fixed global issue status.                            | Seeded                            | ★       |
+| [Issue](/core/api/schema/issue/)                | Report and its current state.                         | Issue creation API                | ★       |
+| [Comment](/core/api/schema/comment/)            | Discussion on an issue.                               | Deferred                          |         |
+| [Interval](/core/api/schema/interval/)          | Workspace planning cycle.                             | Deferred                          |         |
+| [Attachment](/core/api/schema/attachment/)      | File attached to an issue.                            | Deferred                          |         |
+
+UserIdentity has the composite primary key **(user_id, provider_id)**. The other minimum tables use **id** as their primary key. New users and their identities are not seeded. The [initial API flow](/core/api/#minimum-issue-flow) records the outstanding workspace-role assignment decision.

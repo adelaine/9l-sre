@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-labelledby="title description">
 <title id="title">Issue tracker entity relationship diagram</title>
-<desc id="description">Nine entities. Each Role belongs to one Workspace. Each UserRole connects one User and one Role, with at most one role per user per workspace. Each issue has one workspace, status and reporter, and optionally one interval and assignee. Each interval has one workspace. Comments and attachments each have one issue and one user. All relationships allow zero or more records on the child side.</desc>
+<desc id="description">Eleven entities. UserIdentity links User and Provider with composite primary key user_id and provider_id. Each Role belongs to one Workspace. Each UserRole connects one User and one Role, with at most one role per user per workspace. Each issue has one workspace, status and reporter, and optionally one interval and assignee. Each interval has one workspace. Comments and attachments each have one issue and one user. All relationships allow zero or more records on the child side.</desc>
 <style>text{font-family:system-ui,sans-serif;fill:#172b4d} .edge{fill:none;stroke:#526581;stroke-width:2} .label{font-size:16px;paint-order:stroke;stroke:#f8fafc;stroke-width:8;stroke-linejoin:round} .count{font-size:14px;font-weight:700;paint-order:stroke;stroke:#f8fafc;stroke-width:6} .entity{fill:#fff;stroke:#64748b;stroke-width:2} .name{font-size:22px;font-weight:650;text-anchor:middle}</style>
-<rect width="1200" height="1200" fill="#f8fafc"/>
+<rect width="1200" height="1500" fill="#f8fafc"/>
 <text x="48" y="46" font-size="26" font-weight="700">Issue tracker · Entity relationships</text>
 
 <path class="edge" d="M 300 140 H 500"/>
@@ -59,7 +59,7 @@
 <text x="1000" y="598.0" class="name" text-anchor="middle">Comment</text>
 <rect class="entity" x="500" y="750" width="200" height="80" rx="10"/>
 <text x="600" y="798.0" class="name" text-anchor="middle">User</text>
-<text x="600" y="1172" class="label" text-anchor="middle">1 = exactly one     ·     0..1 = optional, at most one     ·     0..* = zero or more</text>
+<text x="600" y="1472" class="label" text-anchor="middle">1 = exactly one     ·     0..1 = optional, at most one     ·     0..* = zero or more</text>
 
 <path class="edge" d="M 100 140 H 55 V 1050 H 100"/>
 <text x="79" y="130" class="count">1</text>
@@ -78,4 +78,18 @@
 <rect class="entity" x="100" y="1010" width="200" height="80" rx="10"/>
 <text x="200" y="1058" class="name">Role</text>
 <text x="600" y="1128" class="label" text-anchor="middle">One assignment per user–workspace pair</text>
+<path class="edge" d="M 680 830 V 870 H 1150 V 1290 H 1100"/>
+<text x="702" y="858" class="count">1</text>
+<text x="1162" y="1170" class="label">has</text>
+<text x="1113" y="1315" class="count">0..*</text>
+<path class="edge" d="M 700 1290 H 860"/>
+<text x="715" y="1315" class="count">1</text>
+<text x="828" y="1315" class="count">0..*</text>
+<text x="780" y="1272" class="label" text-anchor="middle">authenticates</text>
+<rect class="entity" x="500" y="1250" width="200" height="80" rx="10"/>
+<text x="600" y="1298" class="name">Provider</text>
+<rect class="entity" x="860" y="1250" width="240" height="80" rx="10"/>
+<text x="980" y="1298" class="name">UserIdentity</text>
+<text x="800" y="1380" class="label" text-anchor="middle">UserIdentity primary key: (user_id, provider_id)</text>
+<text x="800" y="1412" class="label" text-anchor="middle">Unique external account: (provider_id, provider_subject)</text>
 </svg>

@@ -29,6 +29,12 @@ Reported is the only allowed initial status for a new issue. Role permissions ca
 
 The [status-transition diagram](/core/api/status-transitions/) defines all possible moves. Each requires explicit permission from the user’s role in the issue’s workspace. Forward skips, backward moves, entering or leaving Stalled, and reopening Completed or Not Applicable issues all require permission for the exact transition.
 
-## Fields
+## Minimum fields
 
-Fields and database constraints remain to be defined.
+| Field  | Rule                                |
+| ------ | ----------------------------------- |
+| `id`   | Primary key.                        |
+| `code` | Required unique stable status code. |
+| `name` | Status display name.                |
+
+Physical database types remain to be defined.

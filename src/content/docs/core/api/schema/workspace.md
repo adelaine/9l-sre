@@ -12,6 +12,11 @@ Organizes issues and planning intervals.
 - A workspace defines zero or more Roles, each owned by that workspace.
 - Users join the workspace through UserRole assignments to its roles, with one role per user per workspace.
 
-## Fields
+## Minimum fields
 
-Fields and database constraints remain to be defined.
+| Field  | Rule                    |
+| ------ | ----------------------- |
+| `id`   | Primary key.            |
+| `name` | Workspace display name. |
+
+Physical database types remain to be defined.
