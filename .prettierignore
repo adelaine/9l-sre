@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+.agents/
+.references/
+.git/
+.vscode/
+coverage/
+package-lock.json
+skills-lock.json
+public/
